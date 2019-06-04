@@ -26,7 +26,7 @@ private Button b2;
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent();
-                i.setClass(MainActivity.this, shopinfo.class);
+                i.setClass(MainActivity.this, Main2Activity.class);
                 startActivity(i);
             }
 

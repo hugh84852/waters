@@ -36,7 +36,7 @@
         android:text="中式"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:text="@string/中式" />
+         />
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -48,7 +48,7 @@
         android:text="日式"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox"
-        tools:text="@string/日式" />
+        />
 
     <CheckBox
         android:id="@+id/checkBox3"
@@ -57,7 +57,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="30dp"
-        android:text="@string/港式"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2"
         tools:text="港式" />
@@ -69,7 +69,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="30dp"
-        android:text="@string/韓式"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox3"
         tools:text="韓式" />
@@ -81,7 +80,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="30dp"
-        android:text="@string/西式"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox4"
         tools:text="西式" />
@@ -93,7 +91,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="30dp"
-        android:text="@string/台式"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox5"
         tools:text="台式" />
@@ -105,7 +102,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
-        android:text="@string/美式"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:text="美式" />
@@ -117,7 +113,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
-        android:text="@string/墨式"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox7"
         tools:text="墨式" />
@@ -129,7 +124,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
-        android:text="@string/泰式"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox8"
         tools:text="泰式" />
@@ -141,7 +135,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
-        android:text="@string/印式"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox9"
         tools:text="印式" />
@@ -153,7 +146,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
-        android:text="@string/越式"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox10"
         tools:text="越式" />
@@ -167,7 +159,6 @@
         android:layout_marginTop="467dp"
         android:layout_marginEnd="162dp"
         android:layout_marginRight="162dp"
-        android:text="@string/確認"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
