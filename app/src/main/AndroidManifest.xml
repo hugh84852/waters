@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".store"></activity>
         <activity
             android:name=".shopinfo"
             android:label="@string/title_activity_shopinfo"
@@ -17,7 +16,7 @@
         <activity
             android:name=".home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Main2Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -31,7 +30,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>>
 
 </manifest>
