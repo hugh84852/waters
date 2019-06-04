@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="title_activity_home">home</string>
+    <string name="中式">中式</string>
+    <string name="港式">港式</string>
+    <string name="日式">日式</string>
+    <string name="韓式">韓式</string>
+    <string name="西式">西式</string>
+    <string name="台式">台式</string>
+    <string name="美式">美式</string>
+    <string name="墨式">墨式</string>
+    <string name="泰式">泰式</string>
+    <string name="印式">印式</string>
+    <string name="越式">越式</string>
+    <string name="確認">確認</string>
+
+
 </resources>
