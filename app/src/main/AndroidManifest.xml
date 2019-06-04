@@ -11,6 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".store"></activity>
         <activity
+            android:name=".shopinfo"
+            android:label="@string/title_activity_shopinfo"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
