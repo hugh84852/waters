@@ -6,35 +6,38 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 
 
 
 public class MainActivity extends AppCompatActivity {
-private Button b2;
+    private Button b2;
+    private Button b3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button b2 = (Button) findViewById(R.id.button2);
+        b2 = (Button) findViewById(R.id.button2);
         b2.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent i = new Intent();
-                i.setClass(MainActivity.this, search.class);
-                startActivity(i);
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,Main2Activity.class);
+                startActivity(intent);
             }
-
         });
 
-
-
-
+        b3 = (Button) findViewById(R.id.button3);
+        b3.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,search.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
