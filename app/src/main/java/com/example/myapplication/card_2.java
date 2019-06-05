@@ -6,17 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class activity_card extends AppCompatActivity {
-    private Button BTN1;
+
+public class card_2 extends AppCompatActivity {
+    private Button BTN3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card);
-
-
+        setContentView(R.layout.activity_card_2);
 
 
     }
-
-
 }

@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity_addstore"></activity>
+        <activity android:name=".search"></activity>
         <activity
             android:name=".shopinfo"
             android:label="@string/title_activity_shopinfo"
