@@ -10,7 +10,7 @@
     tools:context=".activity_card">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button5"
         android:layout_width="116dp"
         android:layout_height="69dp"
 
@@ -22,6 +22,7 @@
         android:layout_marginBottom="8dp"
         android:text="抽卡"
         android:textSize="30dp"
+        android:onClick="dialog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.348"
