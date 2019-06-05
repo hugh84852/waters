@@ -32,14 +32,14 @@ private Button BTN1;
             }
 
         });
-        BTN1 = (Button) findViewById(R.id.button3);
+        /*BTN1 = (Button) findViewById(R.id.button3);
         BTN1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,activity_addstore.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
 
