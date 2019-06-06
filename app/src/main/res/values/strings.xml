@@ -6,8 +6,6 @@
     <string name="search_content_name4">價位</string>
     <string name="search_content_name5">提供服務</string>
     <string name="search_content_name6">特殊需求</string>
-    <string name="search_content_name7">ㄧ般搜尋</string>
-    <string name="search_content_name8">特殊搜尋</string>
     <string name="food_type_name1">中式</string>
     <string name="food_type_name2">港式</string>
     <string name="food_type_name3">日式</string>
@@ -34,6 +32,7 @@
     <string name="special_requirement_name1">時間限制</string>
     <string name="special_requirement_name2">服務費</string>
     <string name="special_requirement_name3">無低消</string>
+    <string name="done">完成</string>
     <string name="title_activity_home">home</string>
     <string name="title_activity_shopinfo">shopinfo</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

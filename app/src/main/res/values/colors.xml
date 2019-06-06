@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff5809</color>
-    <color name="colorPrimaryDark">#ffaf60</color>
+    <color name="colorPrimary">#ff6600</color>
+    <color name="colorPrimaryDark">#ff8000</color>
     <color name="colorAccent">#ff9224</color>
+    <color name="seekbar_color">#ffc78e</color>
 </resources>
