@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#ff8000</color>
     <color name="colorAccent">#ff9224</color>
     <color name="seekbar_color">#ffc78e</color>
+    <color name="checkbox">#FFFFFF</color>
 </resources>

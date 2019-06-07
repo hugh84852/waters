@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Spinner;
@@ -8,14 +9,25 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
+import android.app.Activity;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 public class search extends AppCompatActivity {
     private String[] County = new String [] {
-            "臺北市","新北市","桃園市","臺中市","臺南市","高雄市","基隆市","新竹縣","新竹市",
-            "苗栗縣","彰化縣","南投縣","雲林縣","嘉義縣","嘉義市","屏東縣","宜蘭縣","花蓮縣",
-            "臺東縣","澎湖縣","金門縣","連江縣"
+            "縣/市","臺北市","新北市","桃園市","臺中市","臺南市","高雄市","基隆市","新竹縣",
+            "新竹市", "苗栗縣","彰化縣","南投縣","雲林縣","嘉義縣","嘉義市","屏東縣","宜蘭縣",
+            "花蓮縣","臺東縣","澎湖縣","金門縣","連江縣"
     };
+    private String[] start = new String[]{"ssss"};
     private String[][] district = new String [][] {
+            {"鄉/鎮/市/區"},
             {"中正區","大同區","中山區","松山區","大安區","萬華區","信義區", "士林區",
                     "北投區", "內湖區","南港區","文山區"},
             {"板橋區","新莊區","中和區","永和區","土城區","樹林區","三峽區","鶯歌區","三重區",
@@ -42,7 +54,7 @@ public class search extends AppCompatActivity {
     private Spinner sp1;
     private Spinner sp2;
     private Context context;
-    ArrayAdapter<String> adapter1 ;
+    ArrayAdapter<String> adapter1;
     ArrayAdapter<String> adapter2;
 
     @Override
@@ -52,21 +64,21 @@ public class search extends AppCompatActivity {
         context = this;
 
         //程式剛啟動始時載入第一個下拉選單
-        adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, County);
+        adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,County);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp1 = (Spinner) findViewById(R.id.spinner);
         sp1.setAdapter(adapter1);
         sp1.setOnItemSelectedListener(selectListener);
 
-//        //因為下拉選單第一個為縣市，所以先載入縣市群組進第二個下拉選單
-//        adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, district);
-//        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        sp2 = (Spinner) findViewById(R.id.spinner2);
-//        sp2.setAdapter(adapter2);
+        //因為下拉選單第一個為縣市，所以先載入縣市群組進第二個下拉選單
+        adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,start);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp2 = (Spinner) findViewById(R.id.spinner2);
+        sp2.setAdapter(adapter2);
     }
 
-    //第一個下拉類別的監看式
-    private OnItemSelectedListener selectListener = new OnItemSelectedListener(){
+        //第一個下拉類別的監看式
+        private OnItemSelectedListener selectListener = new OnItemSelectedListener(){
         public void onItemSelected(AdapterView<?> parent , View v , int position , long id){
             //讀取第一個下拉選單是選擇第幾個
             int pos = sp1.getSelectedItemPosition();
@@ -76,10 +88,9 @@ public class search extends AppCompatActivity {
             sp2.setAdapter(adapter2);
         }
 
+        @Override
         public void onNothingSelected(AdapterView<?> arg0){
 
         }
-
     };
-
 }
