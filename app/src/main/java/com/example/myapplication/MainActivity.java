@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        b3 = (Button) findViewById(R.id.button3);
+        /*b3 = (Button) findViewById(R.id.button3);
         b3.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.setClass(MainActivity.this,activity_addstore.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
     }
 
