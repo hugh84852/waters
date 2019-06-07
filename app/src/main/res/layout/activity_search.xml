@@ -61,7 +61,7 @@
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="105dp"
+            android:layout_width="125dp"
             android:layout_height="45dp"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="8dp"
@@ -111,6 +111,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name1" />
 
@@ -120,6 +121,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name2" />
 
@@ -129,6 +131,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name3" />
 
@@ -145,6 +148,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name4" />
 
@@ -154,6 +158,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name5" />
 
@@ -163,6 +168,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name6" />
         </LinearLayout>
@@ -178,6 +184,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name10" />
 
@@ -187,6 +194,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name11" />
 
@@ -196,6 +204,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name12" />
         </LinearLayout>
@@ -211,6 +220,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name7" />
 
@@ -220,6 +230,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name8" />
 
@@ -229,6 +240,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/food_type_name9" />
         </LinearLayout>
@@ -272,6 +284,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/hot_food_name1" />
 
@@ -281,6 +294,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/hot_food_name2" />
 
@@ -290,6 +304,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/hot_food_name3" />
         </LinearLayout>
@@ -305,6 +320,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/hot_food_name4" />
 
@@ -314,6 +330,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/hot_food_name5" />
 
@@ -323,6 +340,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/hot_food_name6" />
         </LinearLayout>
@@ -338,6 +356,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/hot_food_name7" />
 
@@ -347,6 +366,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/hot_food_name8" />
         </LinearLayout>
@@ -418,6 +438,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/service_name1" />
 
@@ -427,6 +448,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/service_name2" />
 
@@ -436,6 +458,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/service_name3" />
         </LinearLayout>
@@ -475,6 +498,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/special_requirement_name1" />
 
@@ -484,6 +508,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/special_requirement_name2" />
 
@@ -493,6 +518,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
+                android:theme="@style/checkbox_style"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/special_requirement_name3" />
         </LinearLayout>
