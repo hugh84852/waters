@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".store2"></activity>
+        <activity android:name=".main2change"></activity>
+        <activity android:name=".store2" />
         <activity android:name=".activity_card" /> <!-- <activity -->
         <!-- android:name=".shopinfo" -->
         <!-- android:label="@string/title_activity_shopinfo" -->
@@ -21,8 +22,6 @@
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".search" />
-=======
->>>>>>> origin/master
         <activity android:name=".Main2Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>

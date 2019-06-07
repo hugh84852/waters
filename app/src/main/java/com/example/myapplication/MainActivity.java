@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this,search.class);
+                intent.setClass(MainActivity.this,activity_addstore.class);
                 startActivity(intent);
             }
         });
