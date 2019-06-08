@@ -236,6 +236,7 @@
         android:layout_marginBottom="8dp"
         android:text="今日抽卡紀錄"
         android:textSize="20dp"
+        android:onClick="dialog1"
         android:background="#ffdc35"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
