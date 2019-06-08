@@ -29,14 +29,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        /*BTN1 = (Button) findViewById(R.id.button3);
-        BTN1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,activity_addstore.class);
-                startActivity(intent);
-            }
-        });*/
 
         b3 = (Button) findViewById(R.id.button3);
         b3.setOnClickListener(new Button.OnClickListener(){
