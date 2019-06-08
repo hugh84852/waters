@@ -38,15 +38,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        /*b3 = (Button) findViewById(R.id.button3);
+        b3 = (Button) findViewById(R.id.button3);
         b3.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this,activity_addstore.class);
+                intent.setClass(MainActivity.this,activity_card.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
     }
 
