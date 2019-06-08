@@ -35,9 +35,6 @@ public class home_1 extends AppCompatActivity {
                 case R.id.navigation_story:
                     mTextMessage.setText(R.string.title_story);
                     return true;
-                case R.id.navigation_info:
-                    mTextMessage.setText(R.string.title_info);
-                    return true;
             }
             return false;
         }
