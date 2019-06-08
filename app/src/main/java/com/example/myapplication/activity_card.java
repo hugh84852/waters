@@ -20,7 +20,8 @@ public class activity_card extends AppCompatActivity {
         setContentView(R.layout.activity_card);
        }
 
-        public void dialog(View v){
+        public void dialog(View v)
+        {
             AlertDialog.Builder alertadd = new AlertDialog.Builder(this);
             LayoutInflater factory = LayoutInflater.from(activity_card.this);
             final View view = factory.inflate(R.layout.activity_cardresult, null);
@@ -40,6 +41,28 @@ public class activity_card extends AppCompatActivity {
 
 
         }
+
+    public void dialog1(View v)
+    {
+        AlertDialog.Builder alertadd = new AlertDialog.Builder(this);
+        LayoutInflater factory = LayoutInflater.from(activity_card.this);
+        final View view = factory.inflate(R.layout.activity_cardrecord, null);
+        alertadd.setView(view);
+        alertadd.setNeutralButton("確認!", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dlg, int sumthin) {
+
+            }
+        });
+        alertadd.setPositiveButton("查看店家資訊!", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dlg, int sumthin) {
+
+            }
+        });
+
+        alertadd.show();
+
+
+    }
 
 
 }

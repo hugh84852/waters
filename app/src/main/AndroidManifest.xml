@@ -11,11 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FragmentFour"></activity>
-        <activity android:name=".FragmentThree" />
-        <activity android:name=".FragmentTwo" />
-        <activity android:name=".FragmentOne" />
-        <activity android:name=".home_1" />
+        <activity android:name=".home_1"></activity>
         <activity android:name=".store2" />
         <activity android:name=".activity_card" /> <!-- <activity -->
         <!-- android:name=".shopinfo" -->
