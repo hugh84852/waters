@@ -223,5 +223,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.328" />
 
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="207dp"
+        android:layout_height="56dp"
+        tools:layout_editor_absoluteX="196dp"
+        tools:layout_editor_absoluteY="667dp" />
+
 
 </android.support.constraint.ConstraintLayout>
