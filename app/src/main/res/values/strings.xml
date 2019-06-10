@@ -48,4 +48,11 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="title_activity_test">test</string>
+    <string name="title_home">首頁/推薦</string>
+    <string name="title_res">附近餐廳</string>
+    <string name="title_card">美食抽卡</string>
+    <string name="title_story">水水食記</string>
+    <string name="title_info">水水資料</string>
+    <string name="title_activity_home_3">home_3</string>
 </resources>
