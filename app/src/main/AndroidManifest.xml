@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,8 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".memberinfo"></activity>
-        <!-- <activity android:name=".store" /> -->
+        <activity
+            android:name=".test"
+            android:label="@string/title_activity_test"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".home_1" />
+        <activity android:name=".store2" />
         <activity android:name=".activity_card" /> <!-- <activity -->
         <!-- android:name=".shopinfo" -->
         <!-- android:label="@string/title_activity_shopinfo" -->
