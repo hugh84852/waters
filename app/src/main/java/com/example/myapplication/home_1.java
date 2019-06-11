@@ -3,22 +3,11 @@ package com.example.myapplication;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
-import com.example.myapplication.FragmentOne;
-import com.example.myapplication.FragmentThree;
-import com.example.myapplication.FragmentTwo;
-import com.example.myapplication.FragmentFour;
 
 public class home_1 extends AppCompatActivity {
     private TextView mTextMessage;
