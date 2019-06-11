@@ -79,6 +79,7 @@ public class home_1 extends AppCompatActivity {
         beginTransaction.commit();//每一个事务最后操作必须是commit（），否则看不见效果
         showNav(R.id.navigation_home);
 
+
     }
 
     private void showNav(int navid){
