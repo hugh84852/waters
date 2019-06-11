@@ -25,17 +25,7 @@ public class home extends AppCompatActivity {
             }
         });
     }
-    b2 = (ImageButton) findViewById(R.id.imageButton9);
-        b2.setOnClickListener(new Button.OnClickListener(){
-        public void onClick(View v) {
-            // TODO Auto-generated method stub
-            Intent intent = new Intent();
-            intent.setClass(home.this, activity_introduce_store.class);
-            startActivity(intent);
-        }
-    });
 
-}
 
-}
+
 }

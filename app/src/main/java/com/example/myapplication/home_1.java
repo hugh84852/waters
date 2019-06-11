@@ -71,6 +71,7 @@ public class home_1 extends AppCompatActivity {
 
     }
 
+
     private void showNav(int navid){
         FragmentTransaction beginTransaction=getFragmentManager().beginTransaction();
         switch (navid){
