@@ -21,7 +21,7 @@ public class home extends AppCompatActivity {
         public void onClick(View v) {
             // TODO Auto-generated method stub
             Intent intent = new Intent();
-            intent.setClass(home.this,activity_addstore.class);
+            intent.setClass(home.this, activity_introduce_store.class);
             startActivity(intent);
         }
     });

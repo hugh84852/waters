@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.app.Activity;
 import android.widget.Button;
 
 
@@ -14,7 +12,6 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button b2;
     private Button b3;
-    private Button BTN1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this,activity_card.class);
+                intent.setClass(MainActivity.this, search.class);
                 startActivity(intent);
             }
         });
