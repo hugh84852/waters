@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
@@ -56,12 +58,22 @@ public class search extends AppCompatActivity {
     private Context context;
     ArrayAdapter<String> adapter1;
     ArrayAdapter<String> adapter2;
+    private Button b2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         context = this;
+
+        b2 = (Button) findViewById(R.id.button7);
+        b2.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent();
+                intent.setClass(search.this, activity_introduce_store.class);
+                startActivity(intent);
+            }});
 
         //程式剛啟動始時載入第一個下拉選單
         adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,County);

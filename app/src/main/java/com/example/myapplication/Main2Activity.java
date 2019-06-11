@@ -20,7 +20,7 @@ public class Main2Activity extends AppCompatActivity {
         BTN.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Main2Activity.this,home_1.class);
+                Intent intent = new Intent(Main2Activity.this,test.class);
                 startActivity(intent);
             }
         });
