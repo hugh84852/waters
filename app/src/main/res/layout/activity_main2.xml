@@ -246,7 +246,7 @@
        // tools:text="越式" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -263,6 +263,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.776" />
-        //tools:text="確認" />
+        //tools:text="確認"
 
 </android.support.constraint.ConstraintLayout>
