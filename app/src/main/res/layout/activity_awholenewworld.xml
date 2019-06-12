@@ -4,17 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".home"
-    tools:showIn="@layout/activity_home">
-
-
+    tools:context=".awholenewworld">
 
 
     <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="360dp"
-        android:layout_height="270dp"
+        android:id="@+id/imageButton29"
+        android:layout_width="377dp"
+        android:layout_height="285dp"
         android:layout_marginBottom="8dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,10 +32,10 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885"
+        app:layout_constraintVertical_bias="0.926"
         app:srcCompat="@drawable/realmin" />
 
 
@@ -57,36 +53,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-
-    <ImageButton
-        android:id="@+id/imageButton12"
-        android:layout_width="18dp"
-        android:layout_height="74dp"
-        android:layout_marginBottom="5dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/SearchRestaurant"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666"
-        app:srcCompat="@drawable/ic_action_map" />
-
-    <SearchView
-        android:id="@+id/SearchRestaurant"
-        android:layout_width="315dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="8dp"
-        android:background="#77F1F599"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -138,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/toolbar3"
         app:layout_constraintTop_toTopOf="@+id/toolbar3"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/ic_action_card" />
 
     <ImageButton
@@ -164,6 +130,50 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
         app:srcCompat="@drawable/ic_action_info"
         android:background="#F1F599"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar5"
+        android:layout_width="429dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="8dp"
+        android:background="#F5621A"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="18dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="5dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton29"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SearchRestaurant"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666"
+        app:srcCompat="@drawable/ic_action_map" />
+
+    <SearchView
+        android:id="@+id/SearchRestaurant"
+        android:layout_width="315dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="8dp"
+        android:background="#77F1F599"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022">
+
+    </SearchView>
 
 
 </android.support.constraint.ConstraintLayout>
