@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".awholenewworld"></activity>
-
+        <activity android:name=".near_res"></activity>
+        <activity android:name=".awholenewworld" />
         <activity android:name=".store2" />
         <activity
             android:name=".activity_introduce_store"
@@ -22,11 +22,8 @@
         <!-- android:name=".shopinfo" -->
         <!-- android:label="@string/title_activity_shopinfo" -->
         <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
-
         <activity android:name=".search" />
         <activity android:name=".Main2Activity" />
-
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +36,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 
 </manifest>

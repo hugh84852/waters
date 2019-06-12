@@ -35,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926"
+        app:layout_constraintVertical_bias="0.887"
         app:srcCompat="@drawable/realmin" />
 
 
@@ -73,41 +73,45 @@
         android:id="@+id/imageButton3"
         android:layout_width="95dp"
         android:layout_height="75dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginRight="252dp"
+        android:background="#F1F599"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toEndOf="@+id/toolbar3"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/ic_action_res"
-        android:background="#F1F599"/>
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_action_res" />
 
     <ImageButton
         android:id="@+id/imageButton6"
         android:layout_width="95dp"
         android:layout_height="75dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="316dp"
+        android:layout_marginRight="316dp"
+        android:background="#F1F599"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageButton8"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
-        app:srcCompat="@drawable/ic_action_home"
-        android:background="#F1F599"
-        />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_action_home" />
 
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="95dp"
         android:layout_height="75dp"
+        android:layout_marginTop="21dp"
         android:background="#F1F599"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
-
-        app:layout_constraintVertical_bias="0.48"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_action_card" />
 
     <ImageButton
@@ -119,23 +123,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
+        app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
-        app:layout_constraintHorizontal_bias="0.756"
-        app:srcCompat="@drawable/ic_action_story"
-        />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_action_story" />
 
     <ImageButton
         android:id="@+id/imageButton8"
         android:layout_width="95dp"
         android:layout_height="75dp"
+        android:layout_marginTop="24dp"
+        android:background="#F1F599"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
-        app:srcCompat="@drawable/ic_action_info"
-        android:background="#F1F599"/>
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_action_info" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar5"
