@@ -32,7 +32,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="請更改您的喜好："
+        android:text="在開始之前，請先選擇您的喜好："
         android:textColor="@color/cardview_dark_background"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -233,7 +233,7 @@
             android:layout_marginRight="162dp"
             android:layout_marginBottom="211dp"
             android:background="@color/colorAccent"
-            android:text="@string/modify" />
+            android:text="@string/done" />
 
     </LinearLayout>
 
