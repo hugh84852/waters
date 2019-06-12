@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 public class awholenewworld extends AppCompatActivity {
 
@@ -20,7 +19,7 @@ public class awholenewworld extends AppCompatActivity {
         C1 = (ImageButton) findViewById(R.id.imageButton29);
         C1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                // TODO Auto-generated method stub
+                /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
                 intent.setClass(awholenewworld.this,activity_introduce_store.class);
                 startActivity(intent);

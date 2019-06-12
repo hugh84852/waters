@@ -9,6 +9,98 @@
     android:scrollbarDefaultDelayBeforeFade="400"
     android:scrollbarSize="4dp">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar6"
+        android:layout_width="429dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="8dp"
+        android:background="#F5621A"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar7"
+        android:layout_width="435dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="8dp"
+        android:background="#F1F0EF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/SearchRestaurant"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/imageButton03"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="232dp"
+        android:layout_marginRight="232dp"
+        android:background="#F1F599"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintStart_toStartOf="@+id/toolbar3"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/ic_action_res" />
+
+    <ImageButton
+        android:id="@+id/imageButton06"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton8"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/toolbar3"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:srcCompat="@drawable/ic_action_home"
+        android:background="#F1F599"
+        />
+
+    <ImageButton
+        android:id="@+id/imageButton05"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginRight="148dp"
+        android:background="#F1F599"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/toolbar3"
+        app:layout_constraintTop_toTopOf="@+id/toolbar3"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/ic_action_card" />
+
+    <ImageButton
+        android:id="@+id/imageButton07"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        android:background="#F1F599"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:srcCompat="@drawable/ic_action_story" />
+
+    <ImageButton
+        android:id="@+id/imageButton08"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        android:background="#F1F599"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:srcCompat="@drawable/ic_action_info" />
 
     <Button
         android:id="@+id/button5"
@@ -21,15 +113,16 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="#F5621A"
+        android:onClick="dialog"
         android:text="抽卡"
         android:textSize="30dp"
-        android:onClick="dialog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintHorizontal_bias="0.162"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.758" />
 
     <TextView
         android:id="@+id/textView4"
@@ -109,7 +202,7 @@
         app:layout_constraintHorizontal_bias="0.035"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947"
+        app:layout_constraintVertical_bias="0.835"
         app:srcCompat="@drawable/pic2" />
 
     <TextView
@@ -128,7 +221,7 @@
         app:layout_constraintHorizontal_bias="0.371"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006" />
+        app:layout_constraintVertical_bias="0.054" />
 
     <CheckBox
         android:id="@+id/checkBox3"
@@ -147,7 +240,7 @@
         app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
+        app:layout_constraintVertical_bias="0.612" />
 
     <CheckBox
         android:id="@+id/checkBox4"
@@ -166,7 +259,7 @@
         app:layout_constraintHorizontal_bias="0.826"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
+        app:layout_constraintVertical_bias="0.612" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -180,10 +273,10 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.455"
         app:srcCompat="@drawable/pic3" />
 
     <ImageButton
@@ -198,10 +291,10 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintHorizontal_bias="0.919"
         app:layout_constraintStart_toStartOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.455"
         app:srcCompat="@drawable/pic4" />
 
     <TextView
@@ -234,16 +327,16 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="#ffdc35"
+        android:onClick="dialog1"
         android:text="今日抽卡紀錄"
         android:textSize="20dp"
-        android:onClick="dialog1"
-        android:background="#ffdc35"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.868"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
+        app:layout_constraintVertical_bias="0.863" />
 
 
 </android.support.constraint.ConstraintLayout>
