@@ -17,6 +17,10 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".home_1" />
         <activity android:name=".store2" />
+        <activity
+            android:name=".activity_introduce_store"
+            android:label="@string/title_activity_test"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity_card" /> <!-- <activity -->
         <!-- android:name=".shopinfo" -->
         <!-- android:label="@string/title_activity_shopinfo" -->
@@ -39,5 +43,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 
 </manifest>

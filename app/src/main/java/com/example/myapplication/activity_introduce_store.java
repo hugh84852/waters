@@ -15,7 +15,7 @@ import retrofit2.Response;
 public class activity_introduce_store extends  AppCompatActivity {
     private ImageButton b1;
     Restaurant restaurant;
-    private String choose;
+    private String choose = "資管巧克力";
     private test1 MyAPIService;
     private TextView res_name;
     private TextView res_address;
@@ -28,7 +28,14 @@ public class activity_introduce_store extends  AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduce_store);
-        choose = "資管巧克力";
+        res_name = (TextView) findViewById(R.id.textView20);
+        res_address = (TextView) findViewById(R.id.textView21);
+        res_phone = (TextView) findViewById(R.id.textView22);
+        res_opening_time = (TextView) findViewById(R.id.textView23);
+        ser_name = (TextView) findViewById(R.id.textView24);
+        cat_name = (TextView) findViewById(R.id.textView25);
+        res_info = (TextView) findViewById(R.id.textView26);
+        getResturant(choose);
         b1 = (ImageButton) findViewById(R.id.imageButton4);
         b1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
@@ -36,14 +43,7 @@ public class activity_introduce_store extends  AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(activity_introduce_store.this,store2.class);
                 startActivity(intent);
-                res_name = (TextView) findViewById(R.id.textView20);
-                res_address = (TextView) findViewById(R.id.textView21);
-                res_phone = (TextView) findViewById(R.id.textView22);
-                res_opening_time = (TextView) findViewById(R.id.textView23);
-                ser_name = (TextView) findViewById(R.id.textView24);
-                cat_name = (TextView) findViewById(R.id.textView25);
-                res_info = (TextView) findViewById(R.id.textView26);
-                getResturant(choose);
+
             }
         });
 
@@ -64,13 +64,17 @@ public class activity_introduce_store extends  AppCompatActivity {
                 int i = 0 ; //第0筆資料開始抓
                 for(i = 0 ; i < len ; i++)
                 {
-                    res_name.setText(response.body().getfields(0).getRes_name());
-                    res_address.setText(response.body().getfields(0).getRes_address());
-                    res_phone.setText(response.body().getfields(0).getRes_phone());
-                    res_opening_time.setText(response.body().getfields(0).getRes_opening_time());
-                    ser_name.setText(response.body().getfields(0).getSer_name());
-                    cat_name.setText(response.body().getfields(0).getCat_name());
-                    res_info.setText(response.body().getfields(0).getRes_info());
+                    if(response.body().getfields(i).getRes_name().equals(choose)){
+                        res_name.setText(response.body().getfields(i).getRes_name());
+                        res_address.setText(response.body().getfields(i).getRes_address());
+                        res_phone.setText(response.body().getfields(i).getRes_phone());
+                        res_opening_time.setText(response.body().getfields(i).getRes_opening_time());
+                        ser_name.setText(response.body().getfields(i).getSer_name());
+                        cat_name.setText(response.body().getfields(i).getCat_name());
+                        res_info.setText(response.body().getfields(i).getRes_info());
+                        break;
+                    }
+
                 }
             }
 

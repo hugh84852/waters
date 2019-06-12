@@ -58,7 +58,6 @@ public class search extends AppCompatActivity {
     private Context context;
     ArrayAdapter<String> adapter1;
     ArrayAdapter<String> adapter2;
-    private Button b2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,14 +65,15 @@ public class search extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         context = this;
 
-        b2 = (Button) findViewById(R.id.button7);
-        b2.setOnClickListener(new Button.OnClickListener(){
+        Button BTN = (Button) findViewById(R.id.button7);
+        BTN.setOnClickListener(new Button.OnClickListener(){
+            @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent intent = new Intent();
-                intent.setClass(search.this, activity_introduce_store.class);
+                Intent intent = new Intent(search.this, activity_introduce_store.class);
                 startActivity(intent);
-            }});
+            }
+        });
 
         //程式剛啟動始時載入第一個下拉選單
         adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,County);
