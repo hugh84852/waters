@@ -117,6 +117,7 @@
         android:onClick="dialog"
         android:text="抽卡"
         android:textSize="30dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.162"
@@ -327,10 +328,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#ffdc35"
-        android:onClick="dialog1"
+
         android:text="今日抽卡紀錄"
         android:textSize="20dp"
+        android:onClick="dialog1"
+        android:background="#ffdc35"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.868"

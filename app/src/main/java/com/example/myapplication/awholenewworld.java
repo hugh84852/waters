@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 public class awholenewworld extends AppCompatActivity {
 
     private ImageButton C1;
+    private ImageButton b1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +28,16 @@ public class awholenewworld extends AppCompatActivity {
 
             }
         });
+        b1 = (ImageButton) findViewById(R.id.imageButton5);
+        b1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent();
+                intent.setClass(awholenewworld.this,activity_card.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 }

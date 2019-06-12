@@ -56,8 +56,8 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar3"
-        android:layout_width="435dp"
-        android:layout_height="59dp"
+        android:layout_width="433dp"
+        android:layout_height="54dp"
         android:layout_marginTop="8dp"
         android:background="#F1F0EF"
         android:minHeight="?attr/actionBarSize"
@@ -100,24 +100,30 @@
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:background="#F1F599"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
-        app:layout_constraintTop_toTopOf="@+id/toolbar3"
-        app:layout_constraintVertical_bias="0.05"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+
+        app:layout_constraintVertical_bias="0.48"
         app:srcCompat="@drawable/ic_action_card" />
 
     <ImageButton
         android:id="@+id/imageButton7"
         android:layout_width="95dp"
         android:layout_height="75dp"
+        android:background="#F1F599"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintHorizontal_bias="0.756"
         app:srcCompat="@drawable/ic_action_story"
-        android:background="#F1F599"/>
+        />
 
     <ImageButton
         android:id="@+id/imageButton8"
