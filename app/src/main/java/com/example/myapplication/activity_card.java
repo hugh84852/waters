@@ -17,6 +17,9 @@ import android.widget.Toast;
 
 public class activity_card extends AppCompatActivity {
     private ImageButton d1;
+    private ImageButton a1;
+    private ImageButton b1;
+    private ImageButton c1;
 
     private ImageButton b4;
     @Override
@@ -30,6 +33,36 @@ public class activity_card extends AppCompatActivity {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
                 intent.setClass(activity_card.this,awholenewworld.class);
+                startActivity(intent);
+
+            }
+        });
+        a1 = (ImageButton) findViewById(R.id.imageButton03);
+        a1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                /* TODO Auto-generated method stub */
+                Intent intent = new Intent();
+                intent.setClass(activity_card.this,near_res.class);
+                startActivity(intent);
+
+            }
+        });
+        b1 = (ImageButton) findViewById(R.id.imageButton07);
+        b1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                /* TODO Auto-generated method stub */
+                Intent intent = new Intent();
+                intent.setClass(activity_card.this,story.class);
+                startActivity(intent);
+
+            }
+        });
+        c1 = (ImageButton) findViewById(R.id.imageButton08);
+        c1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                /* TODO Auto-generated method stub */
+                Intent intent = new Intent();
+                intent.setClass(activity_card.this,memberinfo.class);
                 startActivity(intent);
 
             }
