@@ -12,6 +12,7 @@ public class awholenewworld extends AppCompatActivity {
     private ImageButton C1;
     private ImageButton b1;
     private ImageButton D1;
+    private ImageButton a1;
 
 
     @Override
@@ -45,6 +46,16 @@ public class awholenewworld extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
                 intent.setClass(awholenewworld.this,activity_card.class);
+                startActivity(intent);
+
+            }
+        });
+        a1 = (ImageButton) findViewById(R.id.imageButton3);
+        a1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent();
+                intent.setClass(awholenewworld.this,near_res.class);
                 startActivity(intent);
 
             }
