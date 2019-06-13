@@ -56,4 +56,5 @@
     <string name="title_story">水水食記</string>
     <string name="title_info">水水資料</string>
     <string name="title_activity_home_3">home_3</string>
+    <string name="title_activity_story">story</string>
 </resources>

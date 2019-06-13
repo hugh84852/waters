@@ -16,12 +16,24 @@ import android.widget.Toast;
 
 
 public class activity_card extends AppCompatActivity {
+    private ImageButton d1;
 
     private ImageButton b4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card);
+
+        d1 = (ImageButton) findViewById(R.id.imageButton06);
+        d1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                /* TODO Auto-generated method stub */
+                Intent intent = new Intent();
+                intent.setClass(activity_card.this,awholenewworld.class);
+                startActivity(intent);
+
+            }
+        });
        }
 
 
