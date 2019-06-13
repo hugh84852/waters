@@ -50,7 +50,7 @@ public class awholenewworld extends AppCompatActivity {
 
             }
         });
-        a1 = (ImageButton) findViewById(R.id.imageButton3);
+        a1 = (ImageButton) findViewById(R.id.iB1);
         a1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
