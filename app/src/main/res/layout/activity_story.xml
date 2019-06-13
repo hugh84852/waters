@@ -21,15 +21,15 @@
         android:textAllCaps="true"
         android:textColor="#1A0202"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB3"
+        app:layout_constraintBottom_toBottomOf="@+id/iB8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.364"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar8"
+        app:layout_constraintTop_toTopOf="@+id/toolbar10"
         app:layout_constraintVertical_bias="0.455" />
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar9"
+        android:id="@+id/toolbar11"
         android:layout_width="433dp"
         android:layout_height="54dp"
         android:layout_marginTop="8dp"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/iB1"
+        android:id="@+id/iB6"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="21dp"
@@ -54,13 +54,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.962"
-        app:layout_constraintStart_toEndOf="@+id/toolbar9"
+        app:layout_constraintStart_toEndOf="@+id/toolbar11"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_action_res" />
 
     <ImageButton
-        android:id="@+id/iB2"
+        android:id="@+id/iB7"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="21dp"
@@ -68,7 +68,7 @@
         android:layout_marginRight="316dp"
         android:background="#F1F599"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/iB5"
+        app:layout_constraintEnd_toEndOf="@+id/iB10"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
@@ -76,7 +76,7 @@
         app:srcCompat="@drawable/ic_action_home" />
 
     <ImageButton
-        android:id="@+id/iB3"
+        android:id="@+id/iB8"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="21dp"
@@ -89,7 +89,7 @@
         app:srcCompat="@drawable/ic_action_card" />
 
     <ImageButton
-        android:id="@+id/iB4"
+        android:id="@+id/iB9"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:background="#F1F599"
@@ -104,7 +104,7 @@
         app:srcCompat="@drawable/ic_action_story" />
 
     <ImageButton
-        android:id="@+id/iB5"
+        android:id="@+id/iB10"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="24dp"
@@ -118,12 +118,12 @@
         app:srcCompat="@drawable/ic_action_info" />
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar8"
+        android:id="@+id/toolbar10"
         android:layout_width="429dp"
         android:layout_height="53dp"
         android:layout_marginBottom="8dp"
         android:background="#F5621A"
-        app:layout_constraintBottom_toBottomOf="@+id/iB3"
+        app:layout_constraintBottom_toBottomOf="@+id/iB8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -135,11 +135,11 @@
         android:layout_height="227dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB3"
+        app:layout_constraintBottom_toBottomOf="@+id/iB8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar8"
+        app:layout_constraintTop_toTopOf="@+id/toolbar10"
         app:layout_constraintVertical_bias="0.116"
         app:srcCompat="@drawable/story1" />
 
@@ -158,11 +158,11 @@
         android:textAllCaps="true"
         android:textColor="#1A0202"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB3"
+        app:layout_constraintBottom_toBottomOf="@+id/iB8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.387"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar8"
+        app:layout_constraintTop_toTopOf="@+id/toolbar10"
         app:layout_constraintVertical_bias="0.882" />
 
     <ImageView
@@ -175,7 +175,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB5"
+        app:layout_constraintBottom_toBottomOf="@+id/iB10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +193,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB5"
+        app:layout_constraintBottom_toBottomOf="@+id/iB10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.968"
         app:layout_constraintStart_toStartOf="parent"
@@ -211,7 +211,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar8"
+        app:layout_constraintTop_toTopOf="@+id/toolbar10"
         app:layout_constraintVertical_bias="0.743"
         app:srcCompat="@drawable/story2" />
 

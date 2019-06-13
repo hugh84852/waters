@@ -12,7 +12,7 @@
         android:layout_height="184dp"
         android:layout_marginStart="126dp"
         android:layout_marginLeft="126dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="127dp"
         android:layout_marginRight="127dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,24 +23,23 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="194dp"
+        android:layout_height="51dp"
         android:layout_marginStart="163dp"
         android:layout_marginLeft="163dp"
-        android:layout_marginTop="66dp"
         android:layout_marginEnd="163dp"
         android:layout_marginRight="163dp"
-        android:layout_marginBottom="15dp"
         android:text="水水會員資料"
         android:textColor="#ff5809"
+
+
         android:textSize="30dp"
-
-
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar10"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView18"
@@ -99,6 +98,7 @@
         android:text="我的基本資料"
         app:layout_constraintBottom_toTopOf="@+id/button9"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -141,4 +141,104 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button10" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar11"
+        android:layout_width="433dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:background="#F1F0EF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/SearchRestaurant"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/iB6"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginRight="252dp"
+        android:background="#F1F599"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toEndOf="@+id/toolbar11"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_action_res" />
+
+    <ImageButton
+        android:id="@+id/iB7"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="316dp"
+        android:layout_marginRight="316dp"
+        android:background="#F1F599"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/iB10"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_action_home" />
+
+    <ImageButton
+        android:id="@+id/iB8"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="21dp"
+        android:background="#F1F599"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_action_card" />
+
+    <ImageButton
+        android:id="@+id/iB9"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        android:background="#F1F599"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_action_story" />
+
+    <ImageButton
+        android:id="@+id/iB10"
+        android:layout_width="95dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="24dp"
+        android:background="#F1F599"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_action_info" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar10"
+        android:layout_width="429dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="8dp"
+        android:background="#F5621A"
+        app:layout_constraintBottom_toBottomOf="@+id/iB8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>

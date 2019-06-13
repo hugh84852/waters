@@ -30,7 +30,7 @@ public class awholenewworld extends AppCompatActivity {
 
             }
         });
-        D1 = (ImageButton) findViewById(R.id.iB4);
+        D1 = (ImageButton) findViewById(R.id.iB9);
         D1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 /* TODO Auto-generated method stub */
@@ -40,7 +40,7 @@ public class awholenewworld extends AppCompatActivity {
 
             }
         });
-        b1 = (ImageButton) findViewById(R.id.iB3);
+        b1 = (ImageButton) findViewById(R.id.iB8);
         b1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
@@ -50,7 +50,7 @@ public class awholenewworld extends AppCompatActivity {
 
             }
         });
-        a1 = (ImageButton) findViewById(R.id.iB1);
+        a1 = (ImageButton) findViewById(R.id.iB6);
         a1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
