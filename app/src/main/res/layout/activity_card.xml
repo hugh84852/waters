@@ -15,7 +15,7 @@
         android:layout_height="53dp"
         android:layout_marginBottom="8dp"
         android:background="#F5621A"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
+        app:layout_constraintBottom_toBottomOf="@+id/iB800"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,7 +46,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.247"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
+        app:layout_constraintStart_toStartOf="@+id/toolbar11"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
         app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/ic_action_res" />
@@ -57,9 +57,9 @@
         android:layout_height="75dp"
         android:background="#F1F599"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton8"
+        app:layout_constraintEnd_toEndOf="@+id/iB1000"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
+        app:layout_constraintStart_toStartOf="@+id/toolbar11"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
         app:srcCompat="@drawable/ic_action_home" />
 
@@ -72,8 +72,8 @@
         android:background="#F1F599"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
-        app:layout_constraintTop_toTopOf="@+id/toolbar3"
+        app:layout_constraintStart_toStartOf="@+id/toolbar11"
+        app:layout_constraintTop_toTopOf="@+id/toolbar11"
         app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/ic_action_card" />
 

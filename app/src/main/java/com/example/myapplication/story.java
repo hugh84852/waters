@@ -7,57 +7,56 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class near_res extends AppCompatActivity {
-    private ImageButton IB110;
-    private ImageButton IB120;
-    private ImageButton IB130;
-    private ImageButton IB140;
-    private ImageButton IB150;
-
+public class story extends AppCompatActivity {
+    private ImageButton IB6;
+    private ImageButton IB7;
+    private ImageButton IB8;
+    private ImageButton IB9;
+    private ImageButton IB10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_near_res);
+        setContentView(R.layout.activity_story);
 
-        IB110 = (ImageButton) findViewById(R.id.imageButton110);
-        IB110.setOnClickListener(new Button.OnClickListener(){
+        IB6 = (ImageButton) findViewById(R.id.iB900);
+        IB6.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(near_res.this, awholenewworld.class);
+                intent.setClass(story.this, awholenewworld.class);
                 startActivity(intent);
             }
         });
 
-        IB130 = (ImageButton) findViewById(R.id.imageButton130);
-        IB130.setOnClickListener(new Button.OnClickListener(){
+        IB7 = (ImageButton) findViewById(R.id.iB7);
+        IB7.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(near_res.this, activity_card.class);
-                startActivity(intent);
-            }
-
-        });
-
-        IB140 = (ImageButton) findViewById(R.id.imageButton140);
-        IB140.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent intent = new Intent();
-                intent.setClass(near_res.this, story.class);
+                intent.setClass(story.this, near_res.class);
                 startActivity(intent);
             }
 
         });
 
-        IB150 = (ImageButton) findViewById(R.id.imageButton150);
-        IB150.setOnClickListener(new Button.OnClickListener(){
+        IB8 = (ImageButton) findViewById(R.id.iB800);
+        IB8.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(near_res.this, memberinfo.class);
+                intent.setClass(story.this, activity_card.class);
+                startActivity(intent);
+            }
+
+        });
+
+        IB10 = (ImageButton) findViewById(R.id.iB1000);
+        IB10.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent();
+                intent.setClass(story.this, memberinfo.class);
                 startActivity(intent);
             }
 

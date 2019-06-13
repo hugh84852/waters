@@ -11,9 +11,9 @@ public class awholenewworld extends AppCompatActivity {
 
     private ImageButton C1;
     private ImageButton b1;
-    private ImageButton b2;
-    private ImageButton b3;
-    private ImageButton b4;
+    private ImageButton D1;
+    private ImageButton a1;
+    private ImageButton E1;
 
 
     @Override
@@ -22,51 +22,53 @@ public class awholenewworld extends AppCompatActivity {
         setContentView(R.layout.activity_awholenewworld);
 
         C1 = (ImageButton) findViewById(R.id.imageButton29);
-        C1.setOnClickListener(new Button.OnClickListener() {
+        C1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
-                intent.setClass(awholenewworld.this, activity_introduce_store.class);
+                intent.setClass(awholenewworld.this,activity_introduce_store.class);
                 startActivity(intent);
 
             }
         });
-        b1 = (ImageButton) findViewById(R.id.imageButton5);
-        b1.setOnClickListener(new Button.OnClickListener() {
+        D1 = (ImageButton) findViewById(R.id.iB900);
+        D1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                // TODO Auto-generated method stub
+                /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
-                intent.setClass(awholenewworld.this, activity_card.class);
+                intent.setClass(awholenewworld.this,story.class);
                 startActivity(intent);
-            }
-        });
-        b2 = (ImageButton) findViewById(R.id.imageButton3);
-        b2.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent intent = new Intent();
-                intent.setClass(awholenewworld.this, near_res.class);
-                startActivity(intent);
-            }
-        });
 
-        b3 = (ImageButton) findViewById(R.id.imageButton6);
-        b3.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent intent = new Intent();
-                intent.setClass(awholenewworld.this, awholenewworld.class);
-                startActivity(intent);
             }
         });
-
-        b4 = (ImageButton) findViewById(R.id.imageButton8);
-        b4.setOnClickListener(new Button.OnClickListener() {
+        b1 = (ImageButton) findViewById(R.id.iB800);
+        b1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(awholenewworld.this, Member.class);
+                intent.setClass(awholenewworld.this,activity_card.class);
                 startActivity(intent);
+
+            }
+        });
+        a1 = (ImageButton) findViewById(R.id.iB700);
+        a1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent();
+                intent.setClass(awholenewworld.this,near_res.class);
+                startActivity(intent);
+
+            }
+        });
+        E1 = (ImageButton) findViewById(R.id.iB1000);
+        E1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent();
+                intent.setClass(awholenewworld.this,memberinfo.class);
+                startActivity(intent);
+
             }
         });
 
