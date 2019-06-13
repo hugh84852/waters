@@ -21,7 +21,7 @@
         android:textAllCaps="true"
         android:textColor="#1A0202"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB8"
+        app:layout_constraintBottom_toBottomOf="@+id/iB800"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.364"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/iB6"
+        android:id="@+id/iB7"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="21dp"
@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/ic_action_res" />
 
     <ImageButton
-        android:id="@+id/iB7"
+        android:id="@+id/iB700"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="21dp"
@@ -68,7 +68,7 @@
         android:layout_marginRight="316dp"
         android:background="#F1F599"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/iB10"
+        app:layout_constraintEnd_toEndOf="@+id/iB1000"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
@@ -76,7 +76,7 @@
         app:srcCompat="@drawable/ic_action_home" />
 
     <ImageButton
-        android:id="@+id/iB8"
+        android:id="@+id/iB800"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="21dp"
@@ -89,7 +89,7 @@
         app:srcCompat="@drawable/ic_action_card" />
 
     <ImageButton
-        android:id="@+id/iB9"
+        android:id="@+id/iB900"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:background="#F1F599"
@@ -104,7 +104,7 @@
         app:srcCompat="@drawable/ic_action_story" />
 
     <ImageButton
-        android:id="@+id/iB10"
+        android:id="@+id/iB1000"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="24dp"
@@ -123,7 +123,7 @@
         android:layout_height="53dp"
         android:layout_marginBottom="8dp"
         android:background="#F5621A"
-        app:layout_constraintBottom_toBottomOf="@+id/iB8"
+        app:layout_constraintBottom_toBottomOf="@+id/iB800"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -135,7 +135,7 @@
         android:layout_height="227dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB8"
+        app:layout_constraintBottom_toBottomOf="@+id/iB800"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,7 +158,7 @@
         android:textAllCaps="true"
         android:textColor="#1A0202"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB8"
+        app:layout_constraintBottom_toBottomOf="@+id/iB800"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.387"
         app:layout_constraintStart_toStartOf="parent"
@@ -175,7 +175,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB10"
+        app:layout_constraintBottom_toBottomOf="@+id/iB1000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +193,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iB10"
+        app:layout_constraintBottom_toBottomOf="@+id/iB1000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.968"
         app:layout_constraintStart_toStartOf="parent"

@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/imageButton013"
+        android:id="@+id/imageButton120"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"
@@ -54,13 +54,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/toolbar10"
         app:layout_constraintHorizontal_bias="0.219"
-        app:layout_constraintStart_toStartOf="@+id/imageButton016"
+        app:layout_constraintStart_toStartOf="@+id/imageButton110"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_action_res" />
 
     <ImageButton
-        android:id="@+id/imageButton016"
+        android:id="@+id/imageButton110"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="8dp"
@@ -76,7 +76,7 @@
         app:srcCompat="@drawable/ic_action_home" />
 
     <ImageButton
-        android:id="@+id/imageButton015"
+        android:id="@+id/imageButton130"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"
@@ -85,15 +85,15 @@
         android:layout_marginRight="8dp"
         android:background="#F1F599"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton018"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton150"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/imageButton016"
+        app:layout_constraintStart_toStartOf="@+id/imageButton110"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_action_card" />
 
     <ImageButton
-        android:id="@+id/imageButton017"
+        android:id="@+id/imageButton140"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="8dp"
@@ -107,7 +107,7 @@
         app:srcCompat="@drawable/ic_action_story" />
 
     <ImageButton
-        android:id="@+id/imageButton018"
+        android:id="@+id/imageButton150"
         android:layout_width="95dp"
         android:layout_height="75dp"
         android:layout_marginTop="8dp"

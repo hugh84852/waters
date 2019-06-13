@@ -15,6 +15,7 @@
         <activity android:name=".register"/>
         <activity android:name=".near_res"></activity>
         <activity android:name=".awholenewworld" />
+        <activity android:name=".memberinfo" />
         <activity android:name=".store2" />
         <activity
             android:name=".activity_introduce_store"
