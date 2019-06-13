@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="我的收藏" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="瀏覽紀錄" />
+
+
+    </group>
+
+    <item android:title="餐廳分類">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:title="早餐" />
+            <item
+                android:id="@+id/nav_share2"
+                android:title="早午餐" />
+            <item
+                android:id="@+id/nav_share3"
+                android:title="午餐" />
+            <item
+                android:id="@+id/nav_share4"
+                android:title="下午茶" />
+            <item
+                android:id="@+id/nav_share5"
+                android:title="晚餐" />
+            <item
+                android:id="@+id/nav_share6"
+                android:title="宵夜" />
+        </menu>
+    </item>
+
+</menu>

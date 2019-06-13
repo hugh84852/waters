@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".story"></activity>
-        <activity android:name=".near_res" />
+        <activity android:name=".register"/>
+        <activity android:name=".near_res"></activity>
         <activity android:name=".awholenewworld" />
         <activity android:name=".store2" />
         <activity
@@ -26,7 +27,8 @@
         <activity android:name=".search" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".MainActivity">
-            <intent-filter>
+
+    <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
