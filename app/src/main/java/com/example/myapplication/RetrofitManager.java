@@ -14,7 +14,7 @@ public class RetrofitManager {
 
         // 設置baseUrl即要連的網站，addConverterFactory用Gson作為資料處理Converter
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.airtable.com/v0/app3WGToSKY7LdJdm") //自己的資料庫
+                .baseUrl("https://api.airtable.com/v0/app3WGToSKY7LdJdm/") //自己的資料庫
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
