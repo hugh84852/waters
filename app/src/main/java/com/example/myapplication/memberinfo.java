@@ -49,12 +49,12 @@ public class memberinfo extends AppCompatActivity {
 
             }
         });
-        c1 = (ImageButton) findViewById(R.id.iB10);
+        c1 = (ImageButton) findViewById(R.id.iB8);
         c1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
-                intent.setClass(memberinfo.this,memberinfo.class);
+                intent.setClass(memberinfo.this,activity_card.class);
                 startActivity(intent);
 
             }
