@@ -37,6 +37,7 @@ public class activity_card extends AppCompatActivity {
 
             }
         });
+
         a1 = (ImageButton) findViewById(R.id.imageButton03);
         a1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {

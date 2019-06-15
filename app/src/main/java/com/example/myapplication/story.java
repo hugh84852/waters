@@ -19,7 +19,7 @@ public class story extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
 
-        IB6 = (ImageButton) findViewById(R.id.iB900);
+        IB6 = (ImageButton) findViewById(R.id.iB700);
         IB6.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 // TODO Auto-generated method stub

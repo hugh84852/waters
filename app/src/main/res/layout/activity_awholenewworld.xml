@@ -79,7 +79,7 @@
         android:background="#F1F599"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/toolbar11"
         app:layout_constraintTop_toBottomOf="@+id/imageButton11"
         app:layout_constraintVertical_bias="1.0"
