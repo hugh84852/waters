@@ -1,130 +1,106 @@
 package com.example.myapplication;
 
-
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-
-import java.util.ArrayList;
+import android.widget.Toast;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-
-
-
+//
 public class MainActivity extends AppCompatActivity {
-    private Button b2;
-    private Button b;
-    private EditText EditText6;
-    private EditText EditText7;
-    final  private  ArrayList<String> acc = new ArrayList<>();
-    final  private  ArrayList<String> passs = new ArrayList<>();
+    private TextView text;
+    private MyAPIService MyAPI;
+    private EditText account, password;
+    private String mem_name;
 
-    private Button botton;
-    private Button botton2;
-    private Object test1;
-    private  TextView test2;
-    private Button btn1;
-   final private ArrayList<String> corpas = new ArrayList<>();
-
-    //memberlst memberlst;
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ProgressDialogUtil.dismiss();
+        text = (TextView) findViewById(R.id.text);
+        text.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
+        account = (EditText) findViewById(R.id.editText6);
+        password = (EditText) findViewById(R.id.editText7);
 
-
-            test1 =RetrofitManager.getInstance().getAPI();
-            final Call<ListRes<Member>> call= ((MyAPIService) test1).getMem();
-            test2=(TextView)findViewById(R.id.test2);
-
-            EditText6 =(EditText)findViewById(R.id.editText6);
-            EditText7 =(EditText)findViewById(R.id.editText7);
-
-            SharedPreferences session = getSharedPreferences("save_EditText6",MODE_PRIVATE);
-            final SharedPreferences.Editor editor=session.edit();
-
-            call.enqueue(new Callback<ListRes<Member>>() {
-                @Override
-                public void onResponse(Call<ListRes<Member>> call,Response<ListRes<Member>> response)
-                {
-
-                    for(Res<Member> xxx : response.body().getRecords()){
-                        acc.add(xxx.getFields().getMem_account());
-                    }
-                    for (Res<Member> aaa : response.body().getRecords()){
-                        passs.add((aaa.getFields().getMem_password()));
-                    }
-                //test2.setText(response.body().getRecords().get(1).getFields().getMem_account()+passs);
-
-                }
-
-                @Override
-                public void onFailure(Call<ListRes<Member>> call, Throwable t) {
-                    t.printStackTrace();
-                }
-            });
-
-            btn1 = (Button)  findViewById(R.id.botton);
-            btn1.setOnClickListener(new OnClickListener(){
-
-
-
-                public void onClick(View v)
-                {
-
-                    int log =0;
-                    int passd=0;
-
-                    String user =EditText6.getText().toString();
-                    String pass = EditText7.getText().toString();
-                    for (int i=0 ; i<acc.size();i=i+1){
-                        if (acc.get(i).equals(user)){
-                            corpas.clear();
-                            corpas.add(passs.get(i));
-                            log=1;
-                            break;
-                        }
-                    }
-                    if(log==1){
-                        if (corpas.get(0).equals(pass)){
-                            editor.putString("user_id",user);
-                            editor.commit();
-                            Intent intent= new Intent(MainActivity.this, Main2Activity.class);
-                            startActivity(intent);
-                        }
-                        else {
-                           test2.setText("Warning : 密碼錯誤!");
-                        }
-                    }
-                    else{
-                        test2.setText("Warning : 查無此帳號! ");
-                    }
-                }
-            });
-
-
-        b2 = (Button) findViewById(R.id.button2);
-        b2.setOnClickListener(new Button.OnClickListener(){
+        Button login = (Button) findViewById(R.id.button1);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, activity_register.class);
+                ProgressDialogUtil.showProgressDialog(MainActivity.this);
+                String mem_account = account.getText().toString().trim();//trim去除空白 getText獲取id裡的值
+                String mem_password = password.getText().toString().trim();
+                if(mem_account.equals("") || mem_password.equals(""))
+                {
+                    Toast.makeText(MainActivity.this,"請輸入帳號或密碼", Toast.LENGTH_SHORT).show();
+                    ProgressDialogUtil.dismiss();
+                }
+                else {
+                    getMember(mem_account , mem_password);
+                }
+            }
+        });
+
+
+        Button register = (Button) findViewById(R.id.button2);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProgressDialogUtil.showProgressDialog(MainActivity.this);
+                Intent intent = new Intent(MainActivity.this, activity_register.class);
                 startActivity(intent);
+                ProgressDialogUtil.dismiss();
+            }
+        });
+    }
+
+    public void getMember(final String account, final String password) {
+        MyAPI = RetrofitManager.getInstance().getAPI();
+        Call<Member> call = MyAPI.getMem();
+        call.enqueue(new Callback<Member>() {
+            @Override
+            public void onResponse(Call<Member> call, Response<Member> response) {//如果請求連接資料庫並成功抓到值
+                int len = response.body().getRecords().length;
+                int j = 0;
+                boolean Successlogin = false;
+                while (j < len) {
+                    if (response.body().getfields(j).getMem_account().equals(account) && response.body().getfields(j).getMem_password().equals(password)) {
+                        Successlogin = true;
+                        Intent intent = new Intent(MainActivity.this, Main2Activity.class);//成功後切換頁面
+                        SharedPreferences sharedPreferences = getSharedPreferences("User" , MODE_PRIVATE);
+                        sharedPreferences.edit().putString("mem_acoount",response.body().getMem_account()).apply();
+
+                        mem_name = response.body().getfields(j).getMem_name();
+                        SharedPreferences sharedPreferences1 = getSharedPreferences("User" , MODE_PRIVATE);
+                        sharedPreferences1.edit().putString("mem_name",mem_name).apply();
+
+                        startActivity(intent);
+                        ProgressDialogUtil.dismiss();
+                        break;
+                    }
+                    j++;
+                }
+                if (Successlogin == false) {
+                    Toast.makeText(MainActivity.this, "帳號或密碼輸入錯誤!", Toast.LENGTH_SHORT).show();
+                    ProgressDialogUtil.dismiss();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Member> call, Throwable t) {
+                text.setText(t.getMessage());
             }
         });
 
     }
-
-        }
-
-
-
+}

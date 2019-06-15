@@ -58,11 +58,19 @@ public class fields {
         this.mem_birthday = mem_birthday;
         this.mem_phone = mem_phone;
     }
-//
-//    public String getMem_name() {
-//        return mem_name;
-//    }
-//
+
+    public String getMem_account() {
+        return mem_account;
+    }
+
+    public String getMem_password() {
+        return mem_password;
+    }
+
+    public String getMem_name() {
+        return mem_name;
+    }
+
 //    public String getMem_gender() {
 //        return mem_sex;
 //    }
@@ -71,9 +79,7 @@ public class fields {
 //        return mem_birthday;
 //    }
 //
-    public String getMem_account() {
-        return mem_account;
-    }
+
 //
 //    public String getMem_phone() {
 //        return mem_phone;

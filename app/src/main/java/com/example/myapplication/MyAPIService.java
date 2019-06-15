@@ -28,13 +28,6 @@ public interface MyAPIService<restaurant> {
     @GET("Restaurant/{id}") // 用{}表示路徑參數，@Path會將參數帶入至該位置
     Call<Req> getShopcarById(@Path("id") String id);
 
-    @POST("shopcar?api_key=key5qsDjEVRN1DjvG") // 用@Body表示要傳送Body資料
-    @Headers({
-            "Accept: application/json; charset=utf-8",
-            "Content-Type: application/json; charset=utf-8"
-    })
-    Call<Restaurant> postInfor(@Body Req fields);
-
     @POST("Member?api_key=key5qsDjEVRN1DjvG ")
     @Headers({
             "Accept: application/json; charset=utf-8",
