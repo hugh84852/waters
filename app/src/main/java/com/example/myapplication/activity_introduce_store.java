@@ -16,7 +16,7 @@ public class activity_introduce_store extends  AppCompatActivity {
     private ImageButton b1;
     Restaurant restaurant;
     private String choose = "資管巧克力";
-    private test1 MyAPIService;
+    private com.example.myapplication.MyAPIService MyAPIService;
     private TextView res_name;
     private TextView res_address;
     private TextView res_phone;

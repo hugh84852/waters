@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             test1 =RetrofitManager.getInstance().getAPI();
-            final Call<ListRes<Member>> call= ((test1) test1).getMem();
+            final Call<ListRes<Member>> call= ((MyAPIService) test1).getMem();
             test2=(TextView)findViewById(R.id.test2);
 
             EditText6 =(EditText)findViewById(R.id.editText6);

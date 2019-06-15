@@ -28,7 +28,7 @@ public class activity_register extends AppCompatActivity {
     private EditText phone;
     private EditText birthday;
     private RadioGroup gender;
-    private test1 MyAPI;
+    private MyAPIService MyAPI;
     static String mem_birthday;
     private static String gender_tostring = "";
     int getnum = 0;

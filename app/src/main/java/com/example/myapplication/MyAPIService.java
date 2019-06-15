@@ -7,7 +7,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-public interface test1<restaurant> {
+public interface MyAPIService<restaurant> {
     // 測試網站      https://jsonplaceholder.typicode.com/
     // GET網址      https://jsonplaceholder.typicode.com/albums/1
     // POST網址     https://jsonplaceholder.typicode.com/albums

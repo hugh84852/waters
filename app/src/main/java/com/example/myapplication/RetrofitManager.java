@@ -8,7 +8,7 @@ public class RetrofitManager {
 
     private static RetrofitManager mInstance = new RetrofitManager();
 
-    private test1 myAPIService;
+    private MyAPIService myAPIService;
 
     private RetrofitManager() {
 
@@ -18,14 +18,14 @@ public class RetrofitManager {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        myAPIService = retrofit.create(test1.class);
+        myAPIService = retrofit.create(MyAPIService.class);
     }
 
     public static RetrofitManager getInstance() {
         return mInstance;
     }
 
-    public test1 getAPI() {
+    public MyAPIService getAPI() {
         return myAPIService;
     }
 }
