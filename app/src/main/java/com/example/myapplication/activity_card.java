@@ -7,12 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.app.Activity;
-import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class activity_card extends AppCompatActivity {
@@ -32,7 +28,7 @@ public class activity_card extends AppCompatActivity {
             public void onClick(View v) {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
-                intent.setClass(activity_card.this,awholenewworld.class);
+                intent.setClass(activity_card.this, home_page.class);
                 startActivity(intent);
 
             }
@@ -117,7 +113,7 @@ public class activity_card extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(activity_card.this,awholenewworld.class);
+                intent.setClass(activity_card.this, home_page.class);
                 startActivity(intent);
 
             }

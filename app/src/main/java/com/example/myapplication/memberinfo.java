@@ -24,7 +24,7 @@ public class memberinfo extends AppCompatActivity {
             public void onClick(View v) {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
-                intent.setClass(memberinfo.this,awholenewworld.class);
+                intent.setClass(memberinfo.this, home_page.class);
                 startActivity(intent);
 
             }

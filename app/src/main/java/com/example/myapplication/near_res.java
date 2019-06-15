@@ -25,7 +25,7 @@ public class near_res extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(near_res.this, awholenewworld.class);
+                intent.setClass(near_res.this, home_page.class);
                 startActivity(intent);
             }
         });

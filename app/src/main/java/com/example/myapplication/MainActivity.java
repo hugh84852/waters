@@ -18,7 +18,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 //
 public class MainActivity extends AppCompatActivity {
-    private TextView text;
     private MyAPIService MyAPI;
     private EditText account, password;
     private String mem_name;
@@ -28,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ProgressDialogUtil.dismiss();
-        text = (TextView) findViewById(R.id.text);
-        text.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
         account = (EditText) findViewById(R.id.editText6);
         password = (EditText) findViewById(R.id.editText7);
 
@@ -76,17 +73,30 @@ public class MainActivity extends AppCompatActivity {
                 while (j < len) {
                     if (response.body().getfields(j).getMem_account().equals(account) && response.body().getfields(j).getMem_password().equals(password)) {
                         Successlogin = true;
-                        Intent intent = new Intent(MainActivity.this, Main2Activity.class);//成功後切換頁面
                         SharedPreferences sharedPreferences = getSharedPreferences("User" , MODE_PRIVATE);
                         sharedPreferences.edit().putString("mem_acoount",response.body().getMem_account()).apply();
+                        boolean isFirstRun = sharedPreferences.getBoolean("isFirstRun", true);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        if (isFirstRun)
+                        {
+                            Intent intent = new Intent(MainActivity.this, Main2Activity.class);//成功後切換頁面
+                            startActivity(intent);
+                            ProgressDialogUtil.dismiss();
+                            editor.putBoolean("isFirstRun", false);//我得做个标记。改成false。
+                            //提交到本地，存起来
+                            editor.commit();
+                            break;
+                        }
+                        else
+                        {
+                            Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換頁面
+                            startActivity(intent);
+                            ProgressDialogUtil.dismiss();
+                        }
 
                         mem_name = response.body().getfields(j).getMem_name();
                         SharedPreferences sharedPreferences1 = getSharedPreferences("User" , MODE_PRIVATE);
                         sharedPreferences1.edit().putString("mem_name",mem_name).apply();
-
-                        startActivity(intent);
-                        ProgressDialogUtil.dismiss();
-                        break;
                     }
                     j++;
                 }
@@ -98,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Member> call, Throwable t) {
-                text.setText(t.getMessage());
             }
         });
 

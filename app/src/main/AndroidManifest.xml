@@ -18,7 +18,7 @@
         <activity android:name=".activity_register"></activity>
         <activity android:name=".story" />
         <activity android:name=".near_res" />
-        <activity android:name=".awholenewworld" />
+        <activity android:name=".home_page" />
         <activity android:name=".memberinfo" />
         <activity android:name=".store2" />
         <activity

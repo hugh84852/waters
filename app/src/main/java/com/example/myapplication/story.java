@@ -24,7 +24,7 @@ public class story extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(story.this, awholenewworld.class);
+                intent.setClass(story.this, home_page.class);
                 startActivity(intent);
             }
         });

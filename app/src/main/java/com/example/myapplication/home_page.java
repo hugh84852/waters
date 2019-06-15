@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 
-public class awholenewworld extends AppCompatActivity {
+public class home_page extends AppCompatActivity {
 
     private ImageButton C1;
     private ImageButton b1;
@@ -21,14 +21,14 @@ public class awholenewworld extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_awholenewworld);
+        setContentView(R.layout.activity_home_page);
 
         C1 = (ImageButton) findViewById(R.id.imageButton29);
         C1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
-                intent.setClass(awholenewworld.this,activity_introduce_store.class);
+                intent.setClass(home_page.this,activity_introduce_store.class);
                 startActivity(intent);
 
             }
@@ -38,7 +38,7 @@ public class awholenewworld extends AppCompatActivity {
             public void onClick(View v) {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
-                intent.setClass(awholenewworld.this,story.class);
+                intent.setClass(home_page.this,story.class);
                 startActivity(intent);
 
             }
@@ -48,7 +48,7 @@ public class awholenewworld extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(awholenewworld.this,activity_card.class);
+                intent.setClass(home_page.this,activity_card.class);
                 startActivity(intent);
 
             }
@@ -58,7 +58,7 @@ public class awholenewworld extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(awholenewworld.this,near_res.class);
+                intent.setClass(home_page.this,near_res.class);
                 startActivity(intent);
 
             }
@@ -68,7 +68,7 @@ public class awholenewworld extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(awholenewworld.this,memberinfo.class);
+                intent.setClass(home_page.this,memberinfo.class);
                 startActivity(intent);
 
             }
@@ -79,7 +79,7 @@ public class awholenewworld extends AppCompatActivity {
             public void onClick(View v) {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
-                intent.setClass(awholenewworld.this,search.class);
+                intent.setClass(home_page.this,search.class);
                 startActivity(intent);
 
             }
