@@ -29,33 +29,17 @@ public class fields {
         return res_info;
     }
 
+
     //--------------------------------------Member-----------------------------------------------
-    private String mem_account;
-    private String mem_name;
-    private String mem_sex;
-    private String mem_birthday;
-    private String mem_email;
-    private String mem_phone;
 
-    public String getMem_name() {
-        return mem_name;
-    }
 
-    public String getMem_sex() {
-        return mem_sex;
-    }
 
-    public String getMem_birthday() {
-        return mem_birthday;
-    }
 
-    public String getMem_email() {
-        return mem_email;
-    }
 
-    public String getMem_phone() {
-        return mem_phone;
-    }
+
+
+
+
 
     //--------------------------------------Story------------------------------------------------
     private int[] sto_id;

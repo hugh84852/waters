@@ -1,21 +1,18 @@
 package com.example.myapplication;
 
-public class Req {
+public class Req<T> {
+    private T fields;
+    private boolean typecast = true;
 
-    public String id;
-    //private shopcar shopcar;
-    private fields fields;
-
-    public String getId(){
-        return id;
-    }
-
-    public Req(fields fields){
+    public Req(T fields) {
         this.fields = fields;
     }
-
-    public fields getFields(){
+    public T getFields() {
         return fields;
+    }
+
+    public void setFields(T fields) {
+        this.fields = fields;
     }
 
 //    public void setFields(com.example.myapplication.shopcar shopcar){

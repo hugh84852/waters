@@ -5,6 +5,42 @@ public class Member {
     private String id;
     private fields fields;
 
+    private String mem_account;
+    private String mem_password;
+    private String mem_name;
+    private String mem_sex;
+    private String mem_birthday;
+    private String mem_email;
+    private String mem_phone;
+
+
+
+    public String getMem_sex() {
+        return mem_sex;
+    }
+
+    public String getMem_birthday() {
+        return mem_birthday;
+    }
+
+    public String getMem_email() {
+        return mem_email;
+    }
+
+    public String getMem_phone() {
+        return mem_phone;
+    }
+
+
+
+    public String getMem_account() {
+        return mem_account;
+    }
+
+    public String getMem_password() {
+        return mem_password;
+    }
+
     public Member(String id){
         this.id = id;
     }
