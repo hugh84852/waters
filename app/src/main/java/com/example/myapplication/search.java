@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
@@ -58,6 +60,19 @@ public class search extends AppCompatActivity {
     private Context context;
     ArrayAdapter<String> adapter1;
     ArrayAdapter<String> adapter2;
+
+    public void setSeachView(SearchView search)
+    {
+        // 設置SearchView默認是否自動缩小為圖標
+        search.setIconifiedByDefault(true);
+        // 顯示搜尋按鈕
+        search.setSubmitButtonEnabled(true);
+        int id = search.getContext().getResources().getIdentifier("android:id/search", null, null);
+        TextView textView = (TextView) findViewById(id);
+
+
+        SpannableString spanText = new SpannableString("請輸 入需要查詢内容");
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

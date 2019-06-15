@@ -34,4 +34,11 @@ public interface test1<restaurant> {
             "Content-Type: application/json; charset=utf-8"
     })
     Call<Restaurant> postInfor(@Body Req fields);
+
+    @POST("Member?api_key=key5qsDjEVRN1DjvG ")
+    @Headers({
+            "Accept: application/json; charset=utf-8",
+            "Content-Type: application/json; charset=utf-8"
+    })
+    Call<Reqregist> PostMember(@Body Reqregist fields);
 }

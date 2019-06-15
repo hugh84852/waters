@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 
 public class awholenewworld extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class awholenewworld extends AppCompatActivity {
     private ImageButton D1;
     private ImageButton a1;
     private ImageButton E1;
+    private SearchView Search;
 
 
     @Override
@@ -72,5 +74,15 @@ public class awholenewworld extends AppCompatActivity {
             }
         });
 
+        Search = (SearchView) findViewById(R.id.SearchRestaurant);
+        Search.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                /* TODO Auto-generated method stub */
+                Intent intent = new Intent();
+                intent.setClass(awholenewworld.this,search.class);
+                startActivity(intent);
+
+            }
+        });
     }
 }

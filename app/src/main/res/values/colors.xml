@@ -5,4 +5,5 @@
     <color name="colorAccent">#ff9224</color>
     <color name="seekbar_color">#ffc78e</color>
     <color name="checkbox">#FFFFFF</color>
+    <color name="process_background">#F5F5F5</color>
 </resources>

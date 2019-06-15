@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, register.class);
+                intent.setClass(MainActivity.this, activity_register.class);
                 startActivity(intent);
             }
         });

@@ -32,8 +32,8 @@ public class activity_introduce_store extends  AppCompatActivity {
         res_address = (TextView) findViewById(R.id.textView21);
         res_phone = (TextView) findViewById(R.id.textView22);
         res_opening_time = (TextView) findViewById(R.id.textView23);
-        ser_name = (TextView) findViewById(R.id.textView24);
-        cat_name = (TextView) findViewById(R.id.textView25);
+        cat_name = (TextView) findViewById(R.id.textView24);
+        ser_name = (TextView) findViewById(R.id.textView25);
         res_info = (TextView) findViewById(R.id.textView26);
         getResturant(choose);
         b1 = (ImageButton) findViewById(R.id.imageButton4);
@@ -58,24 +58,20 @@ public class activity_introduce_store extends  AppCompatActivity {
         // 4. 執行call
         call.enqueue(new Callback<Restaurant>() {
             @Override
-            //如果請求連接資料庫並成功抓到值
+            //如果請求連接資料 庫並成功抓到值
             public void onResponse(Call<Restaurant> call, Response<Restaurant> response) {
                 int len = response.body().getRecords().length; //Restaurant資料表有幾筆資料
                 int i = 0 ; //第0筆資料開始抓
-                for(i = 0 ; i < len ; i++)
-                {
-                    if(response.body().getfields(i).getRes_name().equals(choose)){
                         res_name.setText(response.body().getfields(i).getRes_name());
                         res_address.setText(response.body().getfields(i).getRes_address());
                         res_phone.setText(response.body().getfields(i).getRes_phone());
                         res_opening_time.setText(response.body().getfields(i).getRes_opening_time());
-                        ser_name.setText(response.body().getfields(i).getSer_name());
-                        cat_name.setText(response.body().getfields(i).getCat_name());
                         res_info.setText(response.body().getfields(i).getRes_info());
-                        break;
-                    }
-
-                }
+//                for(i = 0 ; i < len ; i++)
+//                {
+                        cat_name.setText(response.body().getfields(i).getCat_name().get(0));
+                        ser_name.setText(response.body().getfields(i).getSer_name().get(0));
+//                }
             }
 
             @Override
@@ -84,8 +80,8 @@ public class activity_introduce_store extends  AppCompatActivity {
                 res_address.setText(t.getMessage());
                 res_phone.setText(t.getMessage());
                 res_opening_time.setText(t.getMessage());
-                ser_name.setText(t.getMessage());
                 cat_name.setText(t.getMessage());
+                ser_name.setText(t.getMessage());
                 res_info.setText(t.getMessage());
             }
         });
