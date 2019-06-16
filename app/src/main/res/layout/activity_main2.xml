@@ -102,7 +102,7 @@
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/checkBox1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="90dp"
@@ -187,7 +187,7 @@
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/checkBox8"
+                android:id="@+id/checkBox7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="90dp"
@@ -198,7 +198,7 @@
                 android:theme="@style/checkbox_style" />
 
             <CheckBox
-                android:id="@+id/checkBox7"
+                android:id="@+id/checkBox8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="90dp"

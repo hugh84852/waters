@@ -34,4 +34,11 @@ public interface MyAPIService<restaurant> {
             "Content-Type: application/json; charset=utf-8"
     })
     Call<Reqregist> PostMember(@Body Reqregist fields);
+
+    @POST("Category?api_key=key5qsDjEVRN1DjvG ")
+    @Headers({
+            "Accept: application/json; charset=utf-8",
+            "Content-Type: application/json; charset=utf-8"
+    })
+    Call<Reqregist> PostCategory(@Body Reqregist fields);
 }

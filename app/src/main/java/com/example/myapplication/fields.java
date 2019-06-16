@@ -72,7 +72,7 @@ public class fields {
     }
 
 //    public String getMem_gender() {
-//        return mem_sex;
+//        return mem_gender;
 //    }
 //
 //    public String getMem_birthday() {
