@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/paper"
         tools:ignore="MissingConstraints" />
 
@@ -87,7 +87,7 @@
         android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="60dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +112,7 @@
                 android:textColorHighlight="#B9B377"
                 android:textSize="24sp"
                 android:theme="@style/checkbox_style" />
-
+            //android:checked="true"
             <CheckBox
                 android:id="@+id/checkBox2"
                 android:layout_width="wrap_content"

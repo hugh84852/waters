@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else
                         {
-                            Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至首頁
+                            Intent intent = new Intent(MainActivity.this, Main2Activity.class);//成功後切換至首頁
                             startActivity(intent);
                             ProgressDialogUtil.dismiss();
                         }
