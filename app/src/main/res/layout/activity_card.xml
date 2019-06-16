@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:scrollbarAlwaysDrawHorizontalTrack="false"
     android:scrollbarDefaultDelayBeforeFade="400"
-    android:scrollbarSize="4dp">
+    android:scrollbarSize="4dp"
+    tools:context=".activity_card">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar6"
@@ -102,7 +103,7 @@
         app:srcCompat="@drawable/ic_action_info" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/p1"
         android:layout_width="116dp"
         android:layout_height="69dp"
 
@@ -113,7 +114,6 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="#F5621A"
-        android:onClick="dialog"
         android:text="抽卡"
         android:textSize="30dp"
 
@@ -299,38 +299,62 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="230dp"
-        android:layout_height="57dp"
+        android:layout_width="165dp"
+        android:layout_height="41dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="每日抽卡次數:"
+        android:text="今日抽卡次數:"
         android:textColor="#ff5809"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintVertical_bias="0.316" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-
         android:text="今日抽卡紀錄"
         android:textSize="20dp"
-        android:onClick="dialog1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.863" />
+
+    <TextView
+        android:id="@+id/counter"
+        android:layout_width="65dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.596"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+    //android:onClick="dialog1"
         android:background="#ffdc35"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
