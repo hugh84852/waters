@@ -13,12 +13,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".cardresult1"></activity>
         <activity android:name=".story" />
-        <activity android:name=".register" />
-        <activity android:name=".near_res" />
-        <activity android:name=".activity_register"></activity>
-        <activity android:name=".story" />
+        <activity android:name=".activity_register" />
         <activity android:name=".near_res" />
         <activity android:name=".home_page" />
+        <activity android:name=".cardresult" />
+        <activity android:name=".newcard" />
+
+
         <activity android:name=".memberinfo" />
         <activity android:name=".store2" />
         <activity
