@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
@@ -16,7 +17,10 @@ import android.widget.Toast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-//
+
+
+
+
 public class MainActivity extends AppCompatActivity {
     private MyAPIService MyAPI;
     private EditText account, password;
@@ -72,8 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean Successlogin = false;
                 while (j < len) {
                     if (response.body().getfields(j).getMem_account().equals(account) && response.body().getfields(j).getMem_password().equals(password)) {
-                        Successlogin = true;
-                        SharedPreferences sharedPreferences = getSharedPreferences("User" , MODE_PRIVATE);
+                        Successlogin = true;SharedPreferences sharedPreferences = getSharedPreferences("User" , MODE_PRIVATE);
                         sharedPreferences.edit().putString("mem_acoount",response.body().getMem_account()).apply();
                         boolean isFirstRun = sharedPreferences.getBoolean("isFirstRun", true);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
