@@ -13,7 +13,7 @@ public class memberinfo extends AppCompatActivity {
     private ImageButton a1;
     private ImageButton b1;
     private ImageButton c1;
-
+    private Button b11;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,5 +59,16 @@ public class memberinfo extends AppCompatActivity {
 
             }
         });
+        b11 = (Button) findViewById(R.id.B11);
+        b11.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(memberinfo.this, main2change.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 }

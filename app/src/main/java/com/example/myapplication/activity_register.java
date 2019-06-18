@@ -2,18 +2,23 @@ package com.example.myapplication;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,13 +37,15 @@ public class activity_register extends AppCompatActivity {
     static String mem_birthday;
     private static String gender_tostring = "";
     int getnum = 0;
+    private String str;
+    private List<String> checkbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getnum = 0 ;
-
+        checkbox = new ArrayList<>();
         email = (EditText) findViewById(R.id.editText);
         password = (EditText) findViewById(R.id.editText4);
         name = (EditText) findViewById(R.id.editText3);
@@ -98,6 +105,63 @@ public class activity_register extends AppCompatActivity {
                     }
                     getMember(mem_email,mem_password,mem_name,gender_choose,mem_phone,mem_birthday);
                 }
+
+                //----------------------------------------------------------------------------------
+                final Spinner spinner = (Spinner) findViewById(R.id.spinnercat_1);
+                str = (String) spinner.getSelectedItem();
+
+                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view,
+                                               int position, long id) {
+                        //拿到被选择项的值
+                        str = (String) spinner.getSelectedItem();
+                        if (str.equals("請選擇你的喜好！")){
+                            checkbox.add(null);
+                        }
+                        else if (str.equals("中式")){
+                            checkbox.add("1");
+                        }
+                        else if (str.equals("日式")){
+                            checkbox.add("2");
+                        }
+                        else if (str.equals("港式")){
+                            checkbox.add("3");
+                        }
+                        else if (str.equals("韓式")){
+                            checkbox.add("4");
+                        }
+                        else if (str.equals("台式")){
+                            checkbox.add("5");
+                        }
+                        else if (str.equals("美式")){
+                            checkbox.add("6");
+                        }
+                        else if (str.equals("墨式")){
+                            checkbox.add("7");
+                        }
+                        else if (str.equals("泰式")){
+                            checkbox.add("8");
+                        }
+                        else if (str.equals("印式")){
+                            checkbox.add("9");
+                        }
+                        else if (str.equals("法式")){
+                            checkbox.add("10");
+                        }
+                        else if (str.equals("西式")){
+                            checkbox.add("11");
+                        }
+                        else if (str.equals("其他")){
+                            checkbox.add("12");
+                        }
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        // TODO Auto-generated method stub
+                    }
+                });
+                //----------------------------------------------------------------------------------
             }
         });
     }
@@ -146,7 +210,7 @@ public class activity_register extends AppCompatActivity {
     public void PostRegister(final String mem_email,final String mem_password , final String mem_name, final String gender_tostring , final String mem_phone, final String mem_birthday)
     {
         MyAPI = RetrofitManager.getInstance().getAPI();
-        Call<Reqregist> call = MyAPI.PostMember(new Reqregist(new fields(mem_email,mem_password,mem_name,gender_tostring,mem_birthday,mem_phone)));
+        Call<Reqregist> call = MyAPI.PostMember(new Reqregist(new fields(mem_email,mem_password,mem_name,gender_tostring,mem_birthday,mem_phone,checkbox)));
         call.enqueue(new Callback<Reqregist>() {
             @Override
             public void onResponse(Call<Reqregist> call, Response<Reqregist> response) {
@@ -161,4 +225,5 @@ public class activity_register extends AppCompatActivity {
             }
         });
     }
+
 }

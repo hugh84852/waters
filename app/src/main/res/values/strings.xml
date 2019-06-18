@@ -67,4 +67,22 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_register">register</string>
+
+
+
+    <string-array name="cat">
+        <item>請選擇你的喜好！</item>
+        <item>中式</item>
+        <item>日式</item>
+        <item>港式</item>
+        <item>韓式</item>
+        <item>台式</item>
+        <item>美式</item>
+        <item>墨式</item>
+        <item>泰式</item>
+        <item>印式</item>
+        <item>法式</item>
+        <item>西式</item>
+        <item>其他</item>
+    </string-array>
 </resources>

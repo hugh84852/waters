@@ -1,5 +1,8 @@
 package com.example.myapplication;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Member {
     private Member[] records;
     private String id;
@@ -8,24 +11,30 @@ public class Member {
     private String mem_account;
     private String mem_password;
     private String mem_name;
-    private String mem_sex;
+    private String mem_gender;
     private String mem_birthday;
-    private String mem_email;
     private String mem_phone;
 
+    public List<String> getCat_id() {
+        return cat_id;
+    }
+
+    private List<String> cat_id;
+
+    public Member(List<String> cat_id) {
+
+        this.cat_id = cat_id;
+    }
 
 
-    public String getMem_sex() {
-        return mem_sex;
+    public String getMem_gender() {
+        return mem_gender;
     }
 
     public String getMem_birthday() {
         return mem_birthday;
     }
 
-    public String getMem_email() {
-        return mem_email;
-    }
 
     public String getMem_phone() {
         return mem_phone;
@@ -41,9 +50,7 @@ public class Member {
         return mem_password;
     }
 
-    public Member(String id){
-        this.id = id;
-    }
+
 
     public Member[] getRecords() {
         return records;
@@ -54,4 +61,6 @@ public class Member {
     public fields getfields(int i){
         return records[i].fields;
     }
+
+    public String getMem_name() {return mem_name;}
 }
