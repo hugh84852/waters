@@ -56,7 +56,6 @@ public class activity_register extends AppCompatActivity {
         });
         birthday.setInputType(InputType.TYPE_NULL); //不顯示系统輸入鍵盤</span>
         birthday.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 // TODO Auto-generated method stub

@@ -75,11 +75,12 @@ public class MainActivity extends AppCompatActivity {
                         Successlogin = true;
                         SharedPreferences sharedPreferences = getSharedPreferences("User" , MODE_PRIVATE);
                         sharedPreferences.edit().putString("mem_acoount",response.body().getMem_account()).apply();
+                        sharedPreferences.edit().putString("mem_id",response.body().getId(j));
                         boolean isFirstRun = sharedPreferences.getBoolean("isFirstRun", true);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         if (isFirstRun)
                         {
-                            Intent intent = new Intent(MainActivity.this, Main2Activity.class);//成功後切換至喜好頁面
+                            Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至喜好頁面
                             startActivity(intent);
                             ProgressDialogUtil.dismiss();
                             editor.putBoolean("isFirstRun", false);//做個標記，改成false。

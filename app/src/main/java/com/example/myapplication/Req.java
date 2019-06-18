@@ -14,8 +14,4 @@ public class Req<T> {
     public void setFields(T fields) {
         this.fields = fields;
     }
-
-//    public void setFields(com.example.myapplication.shopcar shopcar){
-//        this.shopcar = shopcar;
-//    }
 }

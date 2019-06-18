@@ -4,6 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
@@ -41,4 +42,11 @@ public interface MyAPIService<restaurant> {
             "Content-Type: application/json; charset=utf-8"
     })
     Call<Reqregist> PostCategory(@Body Reqregist fields);
+
+    @PATCH("Member/{id}?api_key=key5qsDjEVRN1DjvG")
+    @Headers({
+            "Accept: application/json; charset=utf-8",
+            "Content-Type: application/json; charset=utf-8"
+    })
+    Call<Member> UpdateMemInfor(@Body Req fields , @Path("id") String id);
 }
