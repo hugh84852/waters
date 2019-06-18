@@ -104,7 +104,7 @@ public class Main2Activity extends AppCompatActivity {
         BTN.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Main2Activity.this, test_main2.class);
+                Intent intent = new Intent(Main2Activity.this, home_page.class);
                 startActivity(intent);
             }
         });

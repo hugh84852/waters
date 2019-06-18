@@ -11,11 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".search_result"></activity>
+        <activity android:name=".story" />
+
+        <activity android:name=".near_res" />
+
         <activity android:name=".test_main2" />
         <activity android:name=".cardresult1" />
-        <activity android:name=".story" />
+
         <activity android:name=".activity_register" />
-        <activity android:name=".near_res" />
+
         <activity android:name=".home_page" />
         <activity android:name=".cardresult" />
         <activity android:name=".newcard" />
