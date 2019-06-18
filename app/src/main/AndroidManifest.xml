@@ -11,21 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".search_result"></activity>
+        <activity android:name=".activity_search_result6"></activity>
+        <activity android:name=".activity_search_result5" />
+        <activity android:name=".activity_search_result4" />
+        <activity android:name=".activity_search_result3" />
+        <activity android:name=".activity_search_result2" />
+        <activity android:name=".activity_search_result1" />
+        <activity android:name=".search_result" />
         <activity android:name=".story" />
-
         <activity android:name=".near_res" />
-
         <activity android:name=".test_main2" />
         <activity android:name=".cardresult1" />
-
         <activity android:name=".activity_register" />
-
         <activity android:name=".home_page" />
         <activity android:name=".cardresult" />
         <activity android:name=".newcard" />
-        <activity android:name=".main2change"/>
-
+        <activity android:name=".main2change" />
         <activity android:name=".memberinfo" />
         <activity android:name=".store2" />
         <activity
