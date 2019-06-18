@@ -41,4 +41,20 @@ public interface MyAPIService<restaurant> {
             "Content-Type: application/json; charset=utf-8"
     })
     Call<Reqregist> PostCategory(@Body Reqregist fields);
+
+    @POST("Member?api_key=key5qsDjEVRN1DjvG ")
+    @Headers({
+            "Accept: application/json; charset=utf-8",
+            "Content-Type: application/json; charset=utf-8"
+    })
+    Call<Res<Member>> PostMember(@Body Req<Member> data);
+
+
+
+    @POST("ordersystem?api_key=keyq0EkjYQRAzfrUN") // 用@Body表示要傳送Body資料
+    @Headers({
+            "Accept: application/json; charset=utf-8",
+            "Content-Type: application/json; charset=utf-8"
+    })
+    Call<Res<checkorder>> addACheckorder(@Body Req<checkorder> data);
 }

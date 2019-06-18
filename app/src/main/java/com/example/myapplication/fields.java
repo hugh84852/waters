@@ -47,9 +47,14 @@ public class fields {
     private String mem_gender;
     private String mem_birthday;
     private String mem_phone;
+    private List<String> cat_id;
+
+    public List<String> getCat_id() {
+        return cat_id;
+    }
 //    private String mem_fav_cat_name;
 
-    public fields(String mem_account, String mem_password, String mem_name, String mem_gender, String mem_birthday, String mem_phone)
+    public fields(String mem_account, String mem_password, String mem_name, String mem_gender, String mem_birthday, String mem_phone, List<String> cat_id)
     {
         this.mem_account = mem_account;
         this.mem_password = mem_password;
@@ -57,6 +62,7 @@ public class fields {
         this.mem_gender = mem_gender;
         this.mem_birthday = mem_birthday;
         this.mem_phone = mem_phone;
+        this.cat_id = cat_id;
     }
 
     public String getMem_account() {
