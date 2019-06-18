@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         if (isFirstRun)
                         {
-                            Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至喜好頁面
+                            Intent intent = new Intent(MainActivity.this, Main2Activity.class);//成功後切換至喜好頁面
                             startActivity(intent);
                             ProgressDialogUtil.dismiss();
                             editor.putBoolean("isFirstRun", false);//做個標記，改成false。
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else
                         {
-                            Intent intent = new Intent(MainActivity.this, Main2Activity.class);//成功後切換至首頁
+                            Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至首頁
                             startActivity(intent);
                             ProgressDialogUtil.dismiss();
                         }
