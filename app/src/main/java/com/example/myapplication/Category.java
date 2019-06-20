@@ -4,6 +4,7 @@ public class Category {
     private Category[] records;
     private String id;
     private fields fields;
+    private getcategory getcategory;
 
     public Category(String id){
         this.id = id;
@@ -17,5 +18,10 @@ public class Category {
     }
     public fields getfields(int i){
         return records[i].fields;
+    }
+
+    public getcategory getcategory(int i)
+    {
+        return records[i].getcategory;
     }
 }

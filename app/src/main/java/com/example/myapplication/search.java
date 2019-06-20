@@ -64,7 +64,7 @@ public class search extends AppCompatActivity {
 
     private String[] type = new String[]
             {
-                    "類別", "中式", "港式", "日式", "韓式", "臺式", "美式", "法式", "西式",
+                    "類別", "中式", "港式", "日式", "korean", "臺式", "美式", "法式", "西式",
                     "法式", "墨式", "泰式", "印式", "甜點"
             };
     private Spinner sp1;
@@ -145,7 +145,7 @@ public class search extends AppCompatActivity {
 
                 for (i = 0; i < len; i++)
                 {
-                    if (response.body().getfields(i).getCat_name2().equalsIgnoreCase(SP))
+                    if (response.body().getcategory(i).getCat_name2().equalsIgnoreCase("korean"))
                     {
                         //boo = 1;
                         //res_name.setText(response.body().getfields(i).getRes_name());
