@@ -16,7 +16,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.example.myapplication.activity_register.mem_birthday;
+//import static com.example.myapplication.activity_register.mem_birthday;
 
 
 public class Main2Activity extends AppCompatActivity {

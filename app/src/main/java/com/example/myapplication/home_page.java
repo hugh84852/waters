@@ -12,6 +12,7 @@ import android.widget.SearchView;
 public class home_page extends AppCompatActivity {
 
     private ImageButton C1;
+    private ImageButton F1;
     private ImageButton b1;
     private ImageButton D1;
     private ImageButton a1;
@@ -44,7 +45,28 @@ public class home_page extends AppCompatActivity {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
                 intent.setClass(home_page.this,activity_introduce_store.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("Rest","重慶酸辣粉");
+                intent.putExtras(bundle);
                 startActivity(intent);
+
+
+
+            }
+        });
+        F1 = (ImageButton) findViewById(R.id.imageButton11);
+        F1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                /* TODO Auto-generated method stub */
+                Intent intent = new Intent();
+                intent.setClass(home_page.this,activity_introduce_store.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Rest","名廚鐵板燒");
+                intent.putExtras(bundle);
+                startActivity(intent);
+
+
 
             }
         });

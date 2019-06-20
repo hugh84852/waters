@@ -36,6 +36,7 @@ public class activity_card extends AppCompatActivity {
     private int boo = 0;
     private String cat = "中式";
     private String cat1 = "日式";
+    private String cat2="西式";
 
     private List<String> pool;
     private TextView testarray;
@@ -253,7 +254,7 @@ public class activity_card extends AppCompatActivity {
                 int i;
                 int j;
                 for (i = 0; i < len; i++) {
-                    if (response.body().getfields(i).getCat_name().get(0).equals(cat)) {
+                    if (response.body().getfields(i).getCat_name().get(0).equals(cat)||response.body().getfields(i).getCat_name().get(0).equals(cat1)||response.body().getfields(i).getCat_name().get(0).equals(cat2)) {
                         pool.add(response.body().getfields(i).getRes_name());
                     }
                 }

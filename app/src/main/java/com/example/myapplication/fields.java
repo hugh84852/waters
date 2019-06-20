@@ -54,7 +54,8 @@ public class fields {
     }
 //    private String mem_fav_cat_name;
 
-    public fields(String mem_account, String mem_password, String mem_name, String mem_gender, String mem_birthday, String mem_phone, List<String> cat_id)
+    public fields(String mem_account, String mem_password, String mem_name, String mem_gender,
+                  String mem_birthday, String mem_phone, List<String> cat_id)
     {
         this.mem_account = mem_account;
         this.mem_password = mem_password;
@@ -63,6 +64,9 @@ public class fields {
         this.mem_birthday = mem_birthday;
         this.mem_phone = mem_phone;
         this.cat_id = cat_id;
+    }
+    public fields(List<String> catId){
+        cat_id = catId;
     }
 
     public String getMem_account() {
@@ -77,19 +81,17 @@ public class fields {
         return mem_name;
     }
 
-//    public String getMem_gender() {
-//        return mem_gender;
-//    }
-//
-//    public String getMem_birthday() {
-//        return mem_birthday;
-//    }
-//
+    public String getMem_gender() {
+        return mem_gender;
+    }
 
-//
-//    public String getMem_phone() {
-//        return mem_phone;
-//    }
+    public String getMem_birthday() {
+        return mem_birthday;
+    }
+
+    public String getMem_phone() {
+        return mem_phone;
+    }
 //
 //    //--------------------------------------Story------------------------------------------------
 //    private int[] sto_id;
