@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private MyAPIService MyAPI;
     private EditText account, password;
     private String mem_name;
-    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,22 +94,11 @@ public class MainActivity extends AppCompatActivity {
                         sharedPreferences.edit().putString("mem_id",response.body().getId(j));
                         boolean isFirstRun = sharedPreferences.getBoolean("isFirstRun", true);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        if (isFirstRun)
-                        {
-                            Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至喜好頁面
-                            startActivity(intent);
-                            ProgressDialogUtil.dismiss();
-                            editor.putBoolean("isFirstRun", false);//做個標記，改成false。
-                            //提交到本地，存起来
-                            editor.commit();
-                            break;
-                        }
-                        else
-                        {
-                            Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至首頁
-                            startActivity(intent);
-                            ProgressDialogUtil.dismiss();
-                        }
+
+                        Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至首頁
+                        startActivity(intent);
+                        ProgressDialogUtil.dismiss();
+
 
                         mem_name = response.body().getfields(j).getMem_name();
                         SharedPreferences sharedPreferences1 = getSharedPreferences("User" , MODE_PRIVATE);
@@ -129,23 +117,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void setCount(final int count){
-        MyAPI = RetrofitManager.getInstance().getAPI();
-        Call<Reqregist> call = MyAPI.changeInfor(new Reqregist(new fields(count)));
-        call.enqueue(new Callback<Reqregist>(){
-
-            @Override
-            public void onResponse(Call<Reqregist> call, Response<Reqregist> response) {
-                Toast.makeText(MainActivity.this,"ok",Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onFailure(Call<Reqregist> call, Throwable t) {
-                Toast.makeText(MainActivity.this,"no",Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }

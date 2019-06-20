@@ -46,6 +46,12 @@ public class newcard extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(newcard.this,activity_introduce_store.class);
                 startActivity(intent);
+                SharedPreferences abcd=getSharedPreferences("save",activity_card.MODE_PRIVATE);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("Rest","abcd");
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 

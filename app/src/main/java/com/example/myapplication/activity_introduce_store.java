@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -15,7 +17,6 @@ import retrofit2.Response;
 public class activity_introduce_store extends  AppCompatActivity {
     private ImageButton b1;
     Restaurant restaurant;
-    private String choose = "資管巧克力";
     private com.example.myapplication.MyAPIService MyAPIService;
     private TextView res_name;
     private TextView res_address;
@@ -28,6 +29,10 @@ public class activity_introduce_store extends  AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduce_store);
+
+        Bundle bundle1 = this.getIntent().getExtras();
+        final String choose = bundle1.getString("Rest");
+
         res_name = (TextView) findViewById(R.id.textView20);
         res_address = (TextView) findViewById(R.id.textView21);
         res_phone = (TextView) findViewById(R.id.textView22);
@@ -61,17 +66,25 @@ public class activity_introduce_store extends  AppCompatActivity {
             //如果請求連接資料 庫並成功抓到值
             public void onResponse(Call<Restaurant> call, Response<Restaurant> response) {
                 int len = response.body().getRecords().length; //Restaurant資料表有幾筆資料
-                int i = 0 ; //第0筆資料開始抓
+                int i;
+                String Ser = "";
+                for(i = 0 ; i < len ; i++){
+//                {//第0筆資料開始抓
+                    if(response.body().getfields(i).getRes_name().equals(choose)){
                         res_name.setText(response.body().getfields(i).getRes_name());
                         res_address.setText(response.body().getfields(i).getRes_address());
                         res_phone.setText(response.body().getfields(i).getRes_phone());
                         res_opening_time.setText(response.body().getfields(i).getRes_opening_time());
                         res_info.setText(response.body().getfields(i).getRes_info());
-//                for(i = 0 ; i < len ; i++)
-//                {
                         cat_name.setText(response.body().getfields(i).getCat_name().get(0));
-                        ser_name.setText(response.body().getfields(i).getSer_name().get(0));
-//                }
+                        for(int j = 0; j < response.body().getfields(i).getSer_name().size();j++){
+                            Ser+=response.body().getfields(i).getSer_name().get(j)+" ";
+                        }
+                        ser_name.setText(Ser);
+                        break;
+                    }
+
+                }
             }
 
             @Override
