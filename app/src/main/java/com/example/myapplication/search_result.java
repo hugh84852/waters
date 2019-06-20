@@ -1,41 +1,52 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.CheckBox;
+import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.app.Activity;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class activity_introduce_store extends  AppCompatActivity {
-    private ImageButton b1;
-    Restaurant restaurant;
-    private com.example.myapplication.MyAPIService MyAPIService;
-    private TextView res_name;
+public class search_result extends AppCompatActivity {
     private TextView res_address;
     private TextView res_phone;
     private TextView res_opening_time;
     private TextView ser_name;
     private TextView cat_name;
     private TextView res_info;
-    private Button home;
+    ArrayAdapter<String> adapter3;
+    private Spinner sp3;
+    private Context context;
+    private MyAPIService MyAPIService;
+    Restaurant restaurant;
+    private TextView res_name;
+    private int boo = 0;
 
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_introduce_store);
-
-        Bundle bundle1 = this.getIntent().getExtras();
-        final String choose = bundle1.getString("Rest");
-
-
+        setContentView(R.layout.activity_search_result);
 
         res_name = (TextView) findViewById(R.id.textView20);
         res_address = (TextView) findViewById(R.id.textView21);
@@ -44,58 +55,36 @@ public class activity_introduce_store extends  AppCompatActivity {
         cat_name = (TextView) findViewById(R.id.textView24);
         ser_name = (TextView) findViewById(R.id.textView25);
         res_info = (TextView) findViewById(R.id.textView26);
-        getResturant(choose);
-        b1 = (ImageButton) findViewById(R.id.imageButton4);
-        b1.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent intent = new Intent();
-                intent.setClass(activity_introduce_store.this,store2.class);
-                startActivity(intent);
 
-            }
-        });
-        Button home = (Button) findViewById(R.id.tothehome);
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(activity_introduce_store.this, home_page.class);
-                startActivity(intent);
-                ProgressDialogUtil.dismiss();
-            }
-        });
+        Bundle bundle = this.getIntent().getExtras();
+        String get = bundle.getString("get");
+        getResturant(get);
+
 
     }
 
-    public void getResturant(final String choose){
+    public void getResturant(final String get) {
         MyAPIService = RetrofitManager.getInstance().getAPI();
-
         // 3. 建立連線的Call，此處設置call為myAPIService中的getAlbums()連線
         Call<Restaurant> call = MyAPIService.getRes();
-
-        // 4. 執行call
         call.enqueue(new Callback<Restaurant>() {
             @Override
-            //如果請求連接資料 庫並成功抓到值
             public void onResponse(Call<Restaurant> call, Response<Restaurant> response) {
+
                 int len = response.body().getRecords().length; //Restaurant資料表有幾筆資料
-                int i;
-                String Ser = "";
-                for(i = 0 ; i < len ; i++){
-//                {//第0筆資料開始抓
-                    if(response.body().getfields(i).getRes_name().equals(choose)){
+                int i = 0; //第0筆資料開始抓
+                for (i = 0; i < len; i++) {
+                    if (response.body().getfields(i).getRes_name().equalsIgnoreCase(get)) {
                         res_name.setText(response.body().getfields(i).getRes_name());
                         res_address.setText(response.body().getfields(i).getRes_address());
                         res_phone.setText(response.body().getfields(i).getRes_phone());
                         res_opening_time.setText(response.body().getfields(i).getRes_opening_time());
                         res_info.setText(response.body().getfields(i).getRes_info());
+                        ser_name.setText(response.body().getfields(i).getSer_name().get(0));
                         cat_name.setText(response.body().getfields(i).getCat_name().get(0));
-                        for(int j = 0; j < response.body().getfields(i).getSer_name().size();j++){
-                            Ser+=response.body().getfields(i).getSer_name().get(j)+" ";
-                        }
-                        ser_name.setText(Ser);
                         break;
                     }
+
 
                 }
             }
@@ -113,5 +102,7 @@ public class activity_introduce_store extends  AppCompatActivity {
         });
     }
 
-    }
 
+
+
+}
