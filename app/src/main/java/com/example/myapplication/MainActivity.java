@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText account, password;
     private String mem_name;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         ProgressDialogUtil.dismiss();
         account = (EditText) findViewById(R.id.editText6);
         password = (EditText) findViewById(R.id.editText7);
+
 
         Button login = (Button) findViewById(R.id.button1);
         login.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +51,24 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     getMember(mem_account , mem_password);
+
                 }
+
+                SharedPreferences bcde=getSharedPreferences("save",activity_register.MODE_PRIVATE);
+                SharedPreferences abcd =getSharedPreferences("save",MODE_PRIVATE);
+
+
+
+                SharedPreferences.Editor editor = abcd.edit();
+                int x =bcde.getInt("restnum",1);
+                editor.putInt("restnum",15);
+                editor.commit();
+
+
+
+
+
+
             }
         });
 
@@ -65,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     public void getMember(final String account, final String password) {
         MyAPI = RetrofitManager.getInstance().getAPI();
         Call<Member> call = MyAPI.getMem();
@@ -76,12 +97,21 @@ public class MainActivity extends AppCompatActivity {
                 boolean Successlogin = false;
                 while (j < len) {
                     if (response.body().getfields(j).getMem_account().equals(account) && response.body().getfields(j).getMem_password().equals(password)) {
-                        Successlogin = true;SharedPreferences sharedPreferences = getSharedPreferences("User" , MODE_PRIVATE);
-                        sharedPreferences.edit().putString("mem_acoount",response.body().getMem_account()).apply();
-                        sharedPreferences.edit().putString("mem_id",response.body().getId(j));
-                        Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至喜好頁面
+                        Successlogin = true;
+                        String mem_account = response.body().getfields(j).getMem_account();
+                        final SharedPreferences session = getSharedPreferences("User" , MODE_PRIVATE);
+                        final SharedPreferences.Editor editor1 = session.edit();
+                        editor1.putString("mem_account",mem_account);
+                        editor1.putString("mem_id",response.body().getId(j));
+                        boolean isFirstRun = session.getBoolean("isFirstRun", true);
+                        final SharedPreferences.Editor editor = session.edit();
+
+
+
+                        Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至首頁
                         startActivity(intent);
                         ProgressDialogUtil.dismiss();
+
 
                         mem_name = response.body().getfields(j).getMem_name();
                         SharedPreferences sharedPreferences1 = getSharedPreferences("User" , MODE_PRIVATE);

@@ -15,12 +15,28 @@ public class Member {
     private String mem_birthday;
     private String mem_phone;
 
+    public List<String> getMem_fav_cat_name() {
+        return mem_fav_cat_name;
+    }
+
+    private List<String> mem_fav_cat_name;
+
+//    public List<String> getMem_fav_cat_name() {
+//        return mem_fav_cat_name;
+//    }
+
+//    private List<String> mem_fav_cat_name;
+
+
+    public List<String> getCat_id() {
+        return cat_id;
+    }
 
     private List<String> cat_id;
 
-    public Member(List<String> cat_id1) {
+    public Member(List<String> cat_id) {
 
-        cat_id = cat_id1;
+        this.cat_id = cat_id;
     }
 
 
