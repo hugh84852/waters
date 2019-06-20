@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.StringBuilderPrinter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
@@ -60,11 +61,19 @@ public class search extends AppCompatActivity {
                     "茄萣區", "永安區", "彌陀區", "梓官區", "旗山區", "美濃區", "六龜區", "甲仙區",
                     "杉林區", "內門區", "茂林區", "桃源區", "那瑪夏區"}
     };
+
+    private String[] type = new String[]
+            {
+                    "類別", "中式", "港式", "日式", "韓式", "臺式", "美式", "法式", "西式",
+                    "法式", "墨式", "泰式", "印式", "甜點"
+            };
     private Spinner sp1;
     private Spinner sp2;
+    private Spinner sp3;
     private Context context;
     ArrayAdapter<String> adapter1;
     ArrayAdapter<String> adapter2;
+    ArrayAdapter<String> adapter3;
 
     //private String choose = "正欣自助餐";
 
@@ -76,7 +85,7 @@ public class search extends AppCompatActivity {
 
 
 
-    public void getResturant(final SearchView SV) {
+    public void getResturant(final String ET) {
         MyAPIService = RetrofitManager.getInstance().getAPI();
         // 3. 建立連線的Call，此處設置call為myAPIService中的getAlbums()連線
         Call<Restaurant> call = MyAPIService.getRes();
@@ -90,59 +99,24 @@ public class search extends AppCompatActivity {
                 int len = response.body().getRecords().length; //Restaurant資料表有幾筆資料
                 int i = 0; //第0筆資料開始抓
 
-
-
-                for (i = 0; i < len; i++) {
-                    if (response.body().getfields(i).getRes_name().equals("正欣自助餐"))
+                for (i = 0; i < len; i++)
+                {
+                    if (response.body().getfields(i).getRes_name().equalsIgnoreCase(ET))
                     {
-                        boo = 1;
+                        //boo = 1;
                         //res_name.setText(response.body().getfields(i).getRes_name());
                         Toast.makeText(search.this,"有!",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(search.this, search_result.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("get",ET);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
                         break;
                     }
-                    else if(response.body().getfields(i).getRes_name().equals("小夜市廣東粥"))
-                    {
-                        boo = 1;
-                        //res_name.setText(response.body().getfields(i).getRes_name());
-                        Toast.makeText(search.this,"有!",Toast.LENGTH_SHORT).show();
-                        break;
-
-                    }
-                    else if(response.body().getfields(i).getRes_name().equals("重慶酸辣粉")) {
-                        boo = 1;
-                        //res_name.setText(response.body().getfields(i).getRes_name());
-                        Toast.makeText(search.this, "有!", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                   else if(response.body().getfields(i).getRes_name().equals("名廚鐵板燒"))
-                    {
-                            boo = 1;
-                    //res_name.setText(response.body().getfields(i).getRes_name());
-                    Toast.makeText(search.this,"有!",Toast.LENGTH_SHORT).show();
-                    break;
                 }
-                    else if(response.body().getfields(i).getRes_name().equals("文園阿關")) {
-                        boo = 1;
-                        //res_name.setText(response.body().getfields(i).getRes_name());
-                        Toast.makeText(search.this, "有!", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    else if(response.body().getfields(i).getRes_name().equals("心園水餃")) {
-                        boo = 1;
-                        //res_name.setText(response.body().getfields(i).getRes_name());
-                        Toast.makeText(search.this, "有!", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    else if(response.body().getfields(i).getRes_name().equals("sukiya")) {
-                        boo = 1;
-                        //res_name.setText(response.body().getfields(i).getRes_name());
-                        Toast.makeText(search.this, "有!", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    else {
-                        Toast.makeText(search.this, "查無此店家!", Toast.LENGTH_SHORT).show();
-                        continue;
-                    }
+                if(boo==0)
+                {
+                    Toast.makeText(search.this, "查無此店家!", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -155,42 +129,84 @@ public class search extends AppCompatActivity {
         });
     }
 
+    public void getCAT(final String SP) {
+        MyAPIService = RetrofitManager.getInstance().getAPI();
+        // 3. 建立連線的Call，此處設置call為myAPIService中的getAlbums()連線
+        Call<Category> call = MyAPIService.getCat();
+
+        // 4. 執行call
+        call.enqueue(new Callback<Category>() {
+            @Override
+            //如果請求連接資料庫並成功抓到值
+            public void onResponse(Call<Category> call, Response<Category> response) {
+
+                int len = response.body().getRecords().length; //category資料表有幾筆資料
+                int i = 0; //第0筆資料開始抓
+
+                for (i = 0; i < len; i++)
+                {
+                    if (response.body().getfields(i).getCat_name().equals(SP))
+                    {
+                        //boo = 1;
+                        //res_name.setText(response.body().getfields(i).getRes_name());
+                        //Toast.makeText(search.this,"有!",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(search.this, search_result2.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("get",SP);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                        break;
+                    }
+                }
+                if(boo==0)
+                {
+                    Toast.makeText(search.this, "查無此類型店家!", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Category> call, Throwable t) {
+                res_name.setText(t.getMessage());
+
+            }
+        });
+    }
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        final SearchView SV = (SearchView) findViewById(R.id.SV);
-
+        final EditText ET = (EditText) findViewById(R.id.ET);
+        //final String get = ET.getText().toString().trim();
+        final Spinner SP = (Spinner) findViewById(R.id.spinner3);
 
         Button BTN = (Button) findViewById(R.id.button7);
         BTN.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                getResturant(SV);
-                Intent intent = new Intent(search.this, search_result.class);
-//                    Bundle bundle = new Bundle();
-//                    bundle.putString("search",sv);
-//                    intent.putExtras(bundle);
-                startActivity(intent);
-                //res_name = (TextView) findViewById(R.id.textView33);
+                if(!(ET.getText().toString().trim().equals("")))
+                {
+                String get = ET.getText().toString().trim();
+                getResturant(get);
+                }
+                else if(!(SP.getSelectedItem().toString().trim().equals("")))
+                {
+                    String sp = SP.getSelectedItem().toString().trim();
+                    getCAT(sp);
+                }
+                else
+                {
+                    Toast.makeText(search.this, "請至少選擇一種查詢方式!", Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
 
         context = this;
-
-
-
-
-//
-//        CheckBox cb = (CheckBox) findViewById(R.id.checkBox);
-//        public void itemClicked(View v) {
-//            //code to check if this checkbox is checked!
-//            CheckBox checkBox = (CheckBox)v;
-//            if(checkBox.isChecked()){
-//
-//            }
-//        }
 
 
         //程式剛啟動始時載入第一個下拉選單
@@ -205,6 +221,13 @@ public class search extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp2 = (Spinner) findViewById(R.id.spinner2);
         sp2.setAdapter(adapter2);
+
+        //下拉選單 選擇餐廳類別
+        adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, type);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp3 = (Spinner) findViewById(R.id.spinner3);
+        sp3.setAdapter(adapter3);
+
     }
 
     //第一個下拉類別的監看式
@@ -223,11 +246,4 @@ public class search extends AppCompatActivity {
 
         }
     };
-
-
-
-
-
-
 }
-// 12~22

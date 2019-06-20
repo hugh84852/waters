@@ -29,6 +29,9 @@ public interface MyAPIService<restaurant> {
     @GET("Restaurant/{id}") // 用{}表示路徑參數，@Path會將參數帶入至該位置
     Call<Req> getShopcarById(@Path("id") String id);
 
+    @GET("Restaurant?filterByFormula=%7Bres_name%7D%3D%22{name}%22&api_key=keyDxEOyqj9QufS3K")
+    Call<Restaurant> result(@Path("name") String name);
+
     @POST("Member?api_key=key5qsDjEVRN1DjvG ")
     @Headers({
             "Accept: application/json; charset=utf-8",

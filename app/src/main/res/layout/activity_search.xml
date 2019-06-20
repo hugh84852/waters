@@ -20,8 +20,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <SearchView
-            android:id="@+id/SV"
+        <EditText
+            android:id="@+id/ET"
             android:layout_width="343dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
@@ -32,7 +32,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="29dp"
-            android:queryHint="輸入店家名稱"/>
+            android:hint="輸入店家名稱"/>
 
 
         <TextView
@@ -120,150 +120,10 @@
             android:textSize="20sp"
             android:visibility="visible" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name1" />
-
-            <CheckBox
-                android:id="@+id/checkBox12"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name2" />
-
-            <CheckBox
-                android:id="@+id/checkBox13"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name3" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBox14"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name4" />
-
-            <CheckBox
-                android:id="@+id/checkBox15"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name5" />
-
-            <CheckBox
-                android:id="@+id/checkBox16"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name6" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBox20"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name10" />
-
-            <CheckBox
-                android:id="@+id/checkBox21"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name11" />
-
-            <CheckBox
-                android:id="@+id/checkBox22"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name12" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBox17"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name7" />
-
-            <CheckBox
-                android:id="@+id/checkBox18"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name8" />
-
-            <CheckBox
-                android:id="@+id/checkBox19"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="8dp"
-                android:theme="@style/checkbox_style"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/food_type_name9" />
-        </LinearLayout>
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="214dp"
+            android:layout_height="47dp" />
 
     </LinearLayout>
 
