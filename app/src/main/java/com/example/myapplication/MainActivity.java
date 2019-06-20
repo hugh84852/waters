@@ -79,24 +79,9 @@ public class MainActivity extends AppCompatActivity {
                         Successlogin = true;SharedPreferences sharedPreferences = getSharedPreferences("User" , MODE_PRIVATE);
                         sharedPreferences.edit().putString("mem_acoount",response.body().getMem_account()).apply();
                         sharedPreferences.edit().putString("mem_id",response.body().getId(j));
-                        boolean isFirstRun = sharedPreferences.getBoolean("isFirstRun", true);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        if (isFirstRun)
-                        {
-                            Intent intent = new Intent(MainActivity.this, Main2Activity.class);//成功後切換至喜好頁面
-                            startActivity(intent);
-                            ProgressDialogUtil.dismiss();
-                            editor.putBoolean("isFirstRun", false);//做個標記，改成false。
-                            //提交到本地，存起来
-                            editor.commit();
-                            break;
-                        }
-                        else
-                        {
-                            Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至首頁
-                            startActivity(intent);
-                            ProgressDialogUtil.dismiss();
-                        }
+                        Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至喜好頁面
+                        startActivity(intent);
+                        ProgressDialogUtil.dismiss();
 
                         mem_name = response.body().getfields(j).getMem_name();
                         SharedPreferences sharedPreferences1 = getSharedPreferences("User" , MODE_PRIVATE);

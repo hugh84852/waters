@@ -15,15 +15,12 @@ public class Member {
     private String mem_birthday;
     private String mem_phone;
 
-    public List<String> getCat_id() {
-        return cat_id;
-    }
 
     private List<String> cat_id;
 
-    public Member(List<String> cat_id) {
+    public Member(List<String> cat_id1) {
 
-        this.cat_id = cat_id;
+        cat_id = cat_id1;
     }
 
 

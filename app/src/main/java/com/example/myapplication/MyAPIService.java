@@ -26,6 +26,9 @@ public interface MyAPIService<restaurant> {
     @GET("category?api_key=key5qsDjEVRN1DjvG")    // 設置一個GET連線，路徑為albums/1
     Call<Category> getCat();    // 取得的回傳資料用Albums物件接收，連線名稱取為getAlbums
 
+    @GET("category?api_key=key5qsDjEVRN1DjvG")    // 設置一個GET連線，路徑為albums/1
+    Call<Reqregist> getCat1();
+
     @GET("Restaurant/{id}") // 用{}表示路徑參數，@Path會將參數帶入至該位置
     Call<Req> getShopcarById(@Path("id") String id);
 
@@ -43,26 +46,5 @@ public interface MyAPIService<restaurant> {
     })
     Call<Reqregist> PostCategory(@Body Reqregist fields);
 
-    @PATCH("Member/{id}?api_key=key5qsDjEVRN1DjvG")
-    @Headers({
-            "Accept: application/json; charset=utf-8",
-            "Content-Type: application/json; charset=utf-8"
-    })
-    Call<Member> UpdateMemInfor(@Body Req fields , @Path("id") String id);
 
-    @POST("Member?api_key=key5qsDjEVRN1DjvG ")
-    @Headers({
-            "Accept: application/json; charset=utf-8",
-            "Content-Type: application/json; charset=utf-8"
-    })
-    Call<Res<Member>> PostMember(@Body Req<Member> data);
-
-
-
-    @POST("ordersystem?api_key=keyq0EkjYQRAzfrUN") // 用@Body表示要傳送Body資料
-    @Headers({
-            "Accept: application/json; charset=utf-8",
-            "Content-Type: application/json; charset=utf-8"
-    })
-    Call<Res<checkorder>> addACheckorder(@Body Req<checkorder> data);
 }

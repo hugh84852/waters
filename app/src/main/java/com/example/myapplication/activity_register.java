@@ -14,8 +14,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -37,7 +39,9 @@ public class activity_register extends AppCompatActivity {
     static String mem_birthday;
     private static String gender_tostring = "";
     int getnum = 0;
-    private String str;
+    private static String str1;
+    private static String str2;
+    private static String str3;
     private List<String> checkbox;
 
     @Override
@@ -55,171 +59,169 @@ public class activity_register extends AppCompatActivity {
         birthday = (EditText) findViewById(R.id.editText5);
         gender = (RadioGroup) findViewById(R.id.radioGroup);
 
-//        //----------------------------------------------------------------------------------
-//        final Spinner spinnercat_1 = (Spinner) findViewById(R.id.spinnercat_1);
-//        str = (String) spinnercat_1.getSelectedItem();
-//
-//        spinnercat_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view,
-//                                       int position, long id) {
-//                //拿到被选择项的值
-//                str = (String) spinnercat_1.getSelectedItem();
-//                if (str.equals("請選擇你的喜好！")){
-//                    checkbox.add(null);
-//                }
-//                else if (str.equals("中式")){
-//                    checkbox.add("1");
-//                }
-//                else if (str.equals("日式")){
-//                    checkbox.add("2");
-//                }
-//                else if (str.equals("港式")){
-//                    checkbox.add("3");
-//                }
-//                else if (str.equals("韓式")){
-//                    checkbox.add("4");
-//                }
-//                else if (str.equals("台式")){
-//                    checkbox.add("5");
-//                }
-//                else if (str.equals("美式")){
-//                    checkbox.add("6");
-//                }
-//                else if (str.equals("墨式")){
-//                    checkbox.add("7");
-//                }
-//                else if (str.equals("泰式")){
-//                    checkbox.add("8");
-//                }
-//                else if (str.equals("印式")){
-//                    checkbox.add("9");
-//                }
-//                else if (str.equals("法式")){
-//                    checkbox.add("10");
-//                }
-//                else if (str.equals("西式")){
-//                    checkbox.add("11");
-//                }
-//                else if (str.equals("其他")){
-//                    checkbox.add("12");
-//                }
-//            }
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//                // TODO Auto-generated method stub
-//            }
-//        });
-//
-//        final Spinner spinnercat_2 = (Spinner) findViewById(R.id.spinnercat_2);
-//        str = (String) spinnercat_2.getSelectedItem();
-//
-//        spinnercat_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view,
-//                                       int position, long id) {
-//                //拿到被选择项的值
-//                str = (String) spinnercat_2.getSelectedItem();
-//                if (str.equals("請選擇你的喜好！")){
-//                    checkbox.add(null);
-//                }
-//                else if (str.equals("中式")){
-//                    checkbox.add("1");
-//                }
-//                else if (str.equals("日式")){
-//                    checkbox.add("2");
-//                }
-//                else if (str.equals("港式")){
-//                    checkbox.add("3");
-//                }
-//                else if (str.equals("韓式")){
-//                    checkbox.add("4");
-//                }
-//                else if (str.equals("台式")){
-//                    checkbox.add("5");
-//                }
-//                else if (str.equals("美式")){
-//                    checkbox.add("6");
-//                }
-//                else if (str.equals("墨式")){
-//                    checkbox.add("7");
-//                }
-//                else if (str.equals("泰式")){
-//                    checkbox.add("8");
-//                }
-//                else if (str.equals("印式")){
-//                    checkbox.add("9");
-//                }
-//                else if (str.equals("法式")){
-//                    checkbox.add("10");
-//                }
-//                else if (str.equals("西式")){
-//                    checkbox.add("11");
-//                }
-//                else if (str.equals("其他")){
-//                    checkbox.add("12");
-//                }
-//            }
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//                // TODO Auto-generated method stub
-//            }
-//        });
-//
-//        final Spinner spinnercat_3 = (Spinner) findViewById(R.id.spinnercat_3);
-//        str = (String) spinnercat_3.getSelectedItem();
-//
-//        spinnercat_3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view,
-//                                       int position, long id) {
-//                //拿到被选择项的值
-//                str = (String) spinnercat_3.getSelectedItem();
-//                if (str.equals("請選擇你的喜好！")){
-//                    checkbox.add(null);
-//                }
-//                else if (str.equals("中式")){
-//                    checkbox.add("1");
-//                }
-//                else if (str.equals("日式")){
-//                    checkbox.add("2");
-//                }
-//                else if (str.equals("港式")){
-//                    checkbox.add("3");
-//                }
-//                else if (str.equals("韓式")){
-//                    checkbox.add("4");
-//                }
-//                else if (str.equals("台式")){
-//                    checkbox.add("5");
-//                }
-//                else if (str.equals("美式")){
-//                    checkbox.add("6");
-//                }
-//                else if (str.equals("墨式")){
-//                    checkbox.add("7");
-//                }
-//                else if (str.equals("泰式")){
-//                    checkbox.add("8");
-//                }
-//                else if (str.equals("印式")){
-//                    checkbox.add("9");
-//                }
-//                else if (str.equals("法式")){
-//                    checkbox.add("10");
-//                }
-//                else if (str.equals("西式")){
-//                    checkbox.add("11");
-//                }
-//                else if (str.equals("其他")){
-//                    checkbox.add("12");
-//                }
-//            }
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//                // TODO Auto-generated method stub
-//            }
-//        });
+        //----------------------------------------------------------------------------------
+        final Spinner spinnercat_1 = (Spinner) findViewById(R.id.spinnercat_1);
+        str1 = (String) spinnercat_1.getSelectedItem();
+
+        spinnercat_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                //拿到被選擇項的值
+                str1 = (String) spinnercat_1.getSelectedItem();
+                if (str1.equals("請選擇你的喜好！")){
+                }
+                else if (str1.equals("中式")){
+                    checkbox.add("rec2xSGBD05rAgaNP");
+                }
+                else if (str1.equals("日式")){
+                    checkbox.add("rec0DdBrLDS2mJr04");
+                }
+                else if (str1.equals("港式")){
+                    checkbox.add("recHVXS6MGesIQKXD");
+                }
+                else if (str1.equals("韓式")){
+                    checkbox.add("recWbj5NtvBM03iZl");
+                }
+                else if (str1.equals("台式")){
+                    checkbox.add("recNciYuCniEh9nap");
+                }
+                else if (str1.equals("美式")){
+                    checkbox.add("rechhKasnfYTL17tj");
+                }
+                else if (str1.equals("墨式")){
+                    checkbox.add("recxDrVjfq60t8gnW");
+                }
+                else if (str1.equals("泰式")){
+                    checkbox.add("recRcXsiI2FI7XS2Q");
+                }
+                else if (str1.equals("印式")){
+                    checkbox.add("recmKKWUezdg84Yve");
+                }
+                else if (str1.equals("法式")){
+                    checkbox.add("recp16LKymmgeqw9V");
+                }
+                else if (str1.equals("西式")){
+                    checkbox.add("rec5tMXxS0A6KpCNs");
+                }
+                else if (str1.equals("甜點")){
+                    checkbox.add("recbsOylkDNI1hsuk");
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        final Spinner spinnercat_2 = (Spinner) findViewById(R.id.spinnercat_2);
+        str2 = (String) spinnercat_2.getSelectedItem();
+
+        spinnercat_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                //拿到被選擇項的值
+                str2 = (String) spinnercat_2.getSelectedItem();
+                if (str2.equals("請選擇你的喜好！")){
+                }
+                else if (str2.equals("中式")){
+                    checkbox.add("rec2xSGBD05rAgaNP");
+                }
+                else if (str2.equals("日式")){
+                    checkbox.add("rec0DdBrLDS2mJr04");
+                }
+                else if (str2.equals("港式")){
+                    checkbox.add("recHVXS6MGesIQKXD");
+                }
+                else if (str2.equals("韓式")){
+                    checkbox.add("recWbj5NtvBM03iZl");
+                }
+                else if (str2.equals("台式")){
+                    checkbox.add("recNciYuCniEh9nap");
+                }
+                else if (str2.equals("美式")){
+                    checkbox.add("rechhKasnfYTL17tj");
+                }
+                else if (str2.equals("墨式")){
+                    checkbox.add("recxDrVjfq60t8gnW");
+                }
+                else if (str2.equals("泰式")){
+                    checkbox.add("recRcXsiI2FI7XS2Q");
+                }
+                else if (str2.equals("印式")){
+                    checkbox.add("recmKKWUezdg84Yve");
+                }
+                else if (str2.equals("法式")){
+                    checkbox.add("recp16LKymmgeqw9V");
+                }
+                else if (str2.equals("西式")){
+                    checkbox.add("rec5tMXxS0A6KpCNs");
+                }
+                else if (str2.equals("甜點")){
+                    checkbox.add("recbsOylkDNI1hsuk");
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        final Spinner spinnercat_3 = (Spinner) findViewById(R.id.spinnercat_3);
+        str3 = (String) spinnercat_3.getSelectedItem();
+
+        spinnercat_3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                //拿到被選擇項的值
+                str3 = (String) spinnercat_3.getSelectedItem();
+                if (str3.equals("請選擇你的喜好！")){
+                }
+                else if (str3.equals("中式")){
+                    checkbox.add("rec2xSGBD05rAgaNP");
+                }
+                else if (str3.equals("日式")){
+                    checkbox.add("rec0DdBrLDS2mJr04");
+                }
+                else if (str3.equals("港式")){
+                    checkbox.add("recHVXS6MGesIQKXD");
+                }
+                else if (str3.equals("韓式")){
+                    checkbox.add("recWbj5NtvBM03iZl");
+                }
+                else if (str3.equals("台式")){
+                    checkbox.add("recNciYuCniEh9nap");
+                }
+                else if (str3.equals("美式")){
+                    checkbox.add("rechhKasnfYTL17tj");
+                }
+                else if (str3.equals("墨式")){
+                    checkbox.add("recxDrVjfq60t8gnW");
+                }
+                else if (str3.equals("泰式")){
+                    checkbox.add("recRcXsiI2FI7XS2Q");
+                }
+                else if (str3.equals("印式")){
+                    checkbox.add("recmKKWUezdg84Yve");
+                }
+                else if (str3.equals("法式")){
+                    checkbox.add("recp16LKymmgeqw9V");
+                }
+                else if (str3.equals("西式")){
+                    checkbox.add("rec5tMXxS0A6KpCNs");
+                }
+                else if (str3.equals("甜點")){
+                    checkbox.add("recbsOylkDNI1hsuk");
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
+
 //        //----------------------------------------------------------------------------------
 
         gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -274,12 +276,13 @@ public class activity_register extends AppCompatActivity {
                     }
                     getMember(mem_email,mem_password,mem_name,gender_choose,mem_phone,mem_birthday);
                 }
-
-
             }
         });
     }
-    public void getMember(final String mem_email,final String mem_password , final String mem_name , final String gender_tostring , final String mem_phone, final String mem_birthday) {
+
+
+
+    public void getMember(final String mem_email, final String mem_password, final String mem_name, final String gender_tostring, final String mem_phone, final String mem_birthday) {
         MyAPI = RetrofitManager.getInstance().getAPI();
         Call<Member> call = MyAPI.getMem();
         call.enqueue(new Callback<Member>() {
@@ -308,6 +311,7 @@ public class activity_register extends AppCompatActivity {
         });
     }
 
+
     private void showDatePickerDialog() {
         Calendar c = Calendar.getInstance();
         new DatePickerDialog(activity_register.this, new DatePickerDialog.OnDateSetListener() {
@@ -320,12 +324,10 @@ public class activity_register extends AppCompatActivity {
             }
         }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show();
     }
-
+////////////////
     public void PostRegister(final String mem_email,final String mem_password , final String mem_name,
-                             final String gender_tostring , final String mem_phone, final String mem_birthday)
-    {
+                             final String gender_tostring , final String mem_phone, final String mem_birthday) {
         MyAPI = RetrofitManager.getInstance().getAPI();
-        checkbox.add("中式");
         Call<Reqregist> call = MyAPI.PostMember(new Reqregist(new fields(mem_email,mem_password,mem_name,gender_tostring,mem_birthday,mem_phone,checkbox)));
         call.enqueue(new Callback<Reqregist>() {
             @Override
@@ -341,5 +343,4 @@ public class activity_register extends AppCompatActivity {
             }
         });
     }
-
 }

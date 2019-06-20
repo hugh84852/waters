@@ -71,7 +71,7 @@ public class search extends AppCompatActivity {
         TextView textView = (TextView) findViewById(id);
 
 
-        SpannableString spanText = new SpannableString("請輸 入需要查詢内容");
+        SpannableString spanText = new SpannableString("請輸入需要查詢内容");
     }
 
     @Override

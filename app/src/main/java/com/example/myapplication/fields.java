@@ -39,6 +39,18 @@ public class fields {
     public String getRes_info() {
         return res_info;
     }
+
+    private List<String> res_cat_name;
+
+    public List<String> getRes_Cat_name() {
+        return res_cat_name;
+    }
+
+    private List<String> res_ser_name;
+
+    public List<String> getRes_Ser_name() {
+        return res_ser_name;
+    }
 //
 //    //--------------------------------------Member-----------------------------------------------
     private String mem_account;

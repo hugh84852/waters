@@ -69,8 +69,8 @@ public class activity_introduce_store extends  AppCompatActivity {
                         res_info.setText(response.body().getfields(i).getRes_info());
 //                for(i = 0 ; i < len ; i++)
 //                {
-                        cat_name.setText(response.body().getfields(i).getCat_name().get(0));
-                        ser_name.setText(response.body().getfields(i).getSer_name().get(0));
+                        cat_name.setText(response.body().getfields(i).getRes_Cat_name().get(0));
+                        ser_name.setText(response.body().getfields(i).getRes_Ser_name().get(0));
 //                }
             }
 
