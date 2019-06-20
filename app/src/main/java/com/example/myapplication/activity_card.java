@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,31 +30,27 @@ public class activity_card extends AppCompatActivity {
     private ImageButton c1;
     private ImageButton b4;
     private Button p1;
-    private MyAPIService MyAPI ;
-
+    private MyAPIService MyAPI;
+    private String x;
 
     private int count;
     private int boo = 0;
-    private static String cat;
-    private static String cat1;
-    private static String cat2;
+    private static String cat ;
+    private static String cat1 ;
+    private static String cat2 ;
 
     private List<String> pool;
     private TextView testarray;
-    private static String account;
 
 
-
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card);
         TextView counter = (TextView) findViewById(R.id.counter);
 
         SharedPreferences session = getSharedPreferences("User",MODE_PRIVATE);
-        String a = session.getString("mem_account","1080");
-        System.out.println(a);
-        account=a;
-
+        x = session.getString("mem_account","1080");
+        System.out.println(x);
 
 
         int restnum = getSharedPreferences("save", MODE_PRIVATE)
@@ -105,84 +100,79 @@ public class activity_card extends AppCompatActivity {
 
             }
         });
-            p1 = (Button) findViewById(R.id.p1);
-            p1.setOnClickListener(new Button.OnClickListener() {
-                public void onClick(View v) {
-                    SharedPreferences bcde = getSharedPreferences("save",activity_register.MODE_PRIVATE);
-                    SharedPreferences abcd = getSharedPreferences("save",MODE_PRIVATE);
-                    int x =bcde.getInt("restnum",1);
-                    if(x > 0) {
+        p1 = (Button) findViewById(R.id.p1);
+        p1.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                SharedPreferences bcde = getSharedPreferences("save", activity_register.MODE_PRIVATE);
+                SharedPreferences abcd = getSharedPreferences("save", MODE_PRIVATE);
+                int x = bcde.getInt("restnum", 1);
+                if (x > 0) {
 
-                        /* TODO Auto-generated method stub */
-                        System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqq");
-                        getResturant();
-                        Intent intent = new Intent();
-                        intent.setClass(activity_card.this, newcard.class);
-                        startActivity(intent);
-                        TextView counter = (TextView) findViewById(R.id.counter);
+                    /* TODO Auto-generated method stub */
+                    getResturant();
+                    Intent intent = new Intent();
+                    intent.setClass(activity_card.this, newcard.class);
+                    startActivity(intent);
+                    TextView counter = (TextView) findViewById(R.id.counter);
 
-                        int restnum = getSharedPreferences("save", MODE_PRIVATE)
-                                .getInt("restnum", Integer.parseInt("0"));
-                        String countshow = Integer.toString(restnum);
+                    int restnum = getSharedPreferences("save", MODE_PRIVATE)
+                            .getInt("restnum", Integer.parseInt("0"));
+                    String countshow = Integer.toString(restnum);
 
-                        counter.setText(countshow);
-
-
-                    }
-                    else {
-                        Toast.makeText(activity_card.this,"今日抽卡次數已用盡!",Toast.LENGTH_SHORT).show();
+                    counter.setText(countshow);
 
 
-                    }
+                } else {
+                    Toast.makeText(activity_card.this, "今日抽卡次數已用盡!", Toast.LENGTH_SHORT).show();
+
+
                 }
-            });
+            }
+        });
 
     }
 
-    private void getCAT(final String account) {
-        System.out.println("這裡有一根頭髮a1");
-            MyAPI = RetrofitManager.getInstance().getAPI();
+    public void getCat(final String a){
+        MyAPI = RetrofitManager.getInstance().getAPI();
 
-            // 3. 建立連線的Call，此處設置call為myAPIService中的getAlbums()連線
-            Call<Member> call = MyAPI.getMem();
+        // 3. 建立連線的Call，此處設置call為myAPIService中的getAlbums()連線
+        Call<Member> call = MyAPI.getMem();
 
-            // 4. 執行call
-            call.enqueue(new Callback<Member>() {
-                @Override
-                //如果請求連接資料 庫並成功抓到值
-                public void onResponse(Call<Member> call, Response<Member> response) {
-                    System.out.println("hi");
-                    int len1 = response.body().getRecords().length; //Member資料表有幾筆資料
-                    int i;
-                    System.out.println(len1+"qaqaqaqaqaqaqaqaqaqaqaqaqaqaqa");
-                    String fav[] = new String [3];
-                    for(i = 0 ; i <len1 ; i++){
+        // 4. 執行call
+        call.enqueue(new Callback<Member>() {
+            @Override
+            //如果請求連接資料 庫並成功抓到值
+            public void onResponse(Call<Member> call, Response<Member> response) {
+                int len1 = response.body().getRecords().length; //Member資料表有幾筆資料
+                int i;
+                String fav[] = new String[3];
+                for(i = 0 ; i < len1 ; i++){
 //                {//第0筆資料開始抓
-                        System.out.println("這裡有一根頭髮a");
-                        if(response.body().getfields(i).getMem_account().equals(account)){
-                                System.out.println("這裡有一根頭髮");
-                            for(int j = 0; j < response.body().getfields(i).getMem_fav_cat_name().size();j++){
-                                fav[j]=response.body().getfields(i).getMem_fav_cat_name().get(j);
-                            }
-                            break;
+                    if(response.body().getfields(i).getMem_account().equals(a)){
+                        for(int j = 0; j < response.body().getfields(i).getMem_fav_cat_name().size();j++){
+                            fav[j]=response.body().getfields(i).getMem_fav_cat_name().get(j);
                         }
-                        cat = fav[0];
-                        cat1 = fav[1];
-                        cat2 = fav[2];
 
+                        break;
                     }
+
                 }
+                cat=fav[0];
+                cat1=fav[1];
+                cat2 = fav[2];
+            }
 
-                @Override
-                public void onFailure(Call<Member> call, Throwable t) {
-                    System.out.println("這裡有一根頭髮b");
-                }
-            });
-        }
+            @Override
+            public void onFailure(Call<Member> call, Throwable t) {
+                System.out.println("shi bai");
+
+            }
+        });
+    }
 
 
 
-    public void dialog1(View v) {
+            public void dialog1(View v) {
 
         AlertDialog.Builder alertadd = new AlertDialog.Builder(this);
         LayoutInflater factory = LayoutInflater.from(activity_card.this);
@@ -215,31 +205,26 @@ public class activity_card extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-    public void setCount(final int count){
+    public void setCount(final int count) {
         MyAPI = RetrofitManager.getInstance().getAPI();
         Call<Reqregist> call = MyAPI.changeInfor(new Reqregist(new cardcount_fields(count)));
-        call.enqueue(new Callback<Reqregist>(){
+        call.enqueue(new Callback<Reqregist>() {
 
             @Override
             public void onResponse(Call<Reqregist> call, Response<Reqregist> response) {
-                Toast.makeText(activity_card.this,"ok",Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_card.this, "ok", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onFailure(Call<Reqregist> call, Throwable t) {
-                Toast.makeText(activity_card.this,"no",Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_card.this, "no", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
 
-    public void getCou(){
+    public void getCou() {
         MyAPI = RetrofitManager.getInstance().getAPI();
         Call<Card_count> call = MyAPI.getCou();
         call.enqueue(new Callback<Card_count>() {
@@ -262,7 +247,7 @@ public class activity_card extends AppCompatActivity {
 
     }
 
-    public void getCou1(){
+    public void getCou1() {
         MyAPI = RetrofitManager.getInstance().getAPI();
         Call<Card_count> call = MyAPI.getCou();
         call.enqueue(new Callback<Card_count>() {
@@ -287,6 +272,7 @@ public class activity_card extends AppCompatActivity {
 
 
     public void getResturant() {
+                getCat(x);
         MyAPI = RetrofitManager.getInstance().getAPI();
         // 3. 建立連線的Call，此處設置call為myAPIService中的getAlbums()連線
         Call<Restaurant> call = MyAPI.getRes();
@@ -296,60 +282,48 @@ public class activity_card extends AppCompatActivity {
             @Override
             //如果請求連接資料庫並成功抓到值
             public void onResponse(Call<Restaurant> call, Response<Restaurant> response) {
-                getCAT(account);
+
                 int len = response.body().getRecords().length; //Restaurant資料表有幾筆資料
                 int i;
                 int j;
-
                 for (i = 0; i < len; i++) {
-                    if (response.body().getfields(i).getCat_name().get(0).equals(cat)||response.body().getfields(i).getCat_name().get(0).equals(cat1)||response.body().getfields(i).getCat_name().get(0).equals(cat2)) {
+                    if (response.body().getfields(i).getCat_name().get(0).equals(cat) || response.body().getfields(i).getCat_name().get(0).equals(cat1) || response.body().getfields(i).getCat_name().get(0).equals(cat2)) {
                         pool.add(response.body().getfields(i).getRes_name());
-                        System.out.println("123122312313123123123123");
                     }
                 }
-                    int r = (int) (Math.random()*pool.size());
-                    SharedPreferences abcd =getSharedPreferences("save",MODE_PRIVATE);
-                    abcd.edit()
-                        .putString("card",pool.get(r))
+                int r = (int) (Math.random() * pool.size());
+                SharedPreferences abcd = getSharedPreferences("save", MODE_PRIVATE);
+                abcd.edit()
+                        .putString("card", pool.get(r))
                         .apply();
 
-                    SharedPreferences bcde=getSharedPreferences("save",activity_register.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = abcd.edit();
-                    int x =bcde.getInt("restnum",1);
-                    editor.putInt("restnum",x-1);
-                    editor.apply();
-                            //================================================================
-                    //pool.add(response.body().getfields(i).getRes_name());
-                    //String a =pool.get(r);
-                            //res_name.setText(response.body().getfields(i).getRes_name());
-                            // Toast.makeText(activity_card.this,"有!",Toast.LENGTH_SHORT).show();
-                            //SharedPreferences abcd =getSharedPreferences("save",MODE_PRIVATE);
-                            //SharedPreferences bcde=getSharedPreferences("save",activity_register.MODE_PRIVATE);
-                            //SharedPreferences.Editor editor = abcd.edit();
-                            //editor.putString("rest",a);
-                            //int x =bcde.getInt("restnum",1);
-                            //editor.putInt("restnum",x+1);
-                            //editor.commit();
-                            //================================================================
-
-
-                    }
-
-
-
+                SharedPreferences bcde = getSharedPreferences("save", activity_register.MODE_PRIVATE);
+                SharedPreferences.Editor editor = abcd.edit();
+                int x = bcde.getInt("restnum", 1);
+                editor.putInt("restnum", x - 1);
+                editor.apply();
+                //================================================================
+                //pool.add(response.body().getfields(i).getRes_name());
+                //String a =pool.get(r);
+                //res_name.setText(response.body().getfields(i).getRes_name());
+                // Toast.makeText(activity_card.this,"有!",Toast.LENGTH_SHORT).show();
+                //SharedPreferences abcd =getSharedPreferences("save",MODE_PRIVATE);
+                //SharedPreferences bcde=getSharedPreferences("save",activity_register.MODE_PRIVATE);
+                //SharedPreferences.Editor editor = abcd.edit();
+                //editor.putString("rest",a);
+                //int x =bcde.getInt("restnum",1);
+                //editor.putString("rest",a);
+                //int x = bcde.getInt("restnum",1);
+                //editor.putInt("restnum",x+1);
+                //editor.commit();
+                //==================================================================
+            }
 
             @Override
             public void onFailure(Call<Restaurant> call, Throwable t) {
-                //res_name.setText(t.getMessage());
-                System.out.println("rrrrrrrrrrrrrrrrrrrrrrrr");
+
             }
         });
     }
 
-
-}
-
-
-
-
-
+    }

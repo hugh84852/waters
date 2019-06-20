@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         String mem_account = response.body().getfields(j).getMem_account();
                         final SharedPreferences session = getSharedPreferences("User" , MODE_PRIVATE);
                         final SharedPreferences.Editor editor1 = session.edit();
-                        editor1.putString("mem_account",mem_account);
+                        editor1.putString("mem_account",mem_account).commit();
                         editor1.putString("mem_id",response.body().getId(j));
                         boolean isFirstRun = session.getBoolean("isFirstRun", true);
                         final SharedPreferences.Editor editor = session.edit();
