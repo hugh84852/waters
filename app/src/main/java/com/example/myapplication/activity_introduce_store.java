@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,7 @@ public class activity_introduce_store extends  AppCompatActivity {
     private TextView ser_name;
     private TextView cat_name;
     private TextView res_info;
+    private Button home;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,8 @@ public class activity_introduce_store extends  AppCompatActivity {
 
         Bundle bundle1 = this.getIntent().getExtras();
         final String choose = bundle1.getString("Rest");
+
+
 
         res_name = (TextView) findViewById(R.id.textView20);
         res_address = (TextView) findViewById(R.id.textView21);
@@ -49,6 +53,15 @@ public class activity_introduce_store extends  AppCompatActivity {
                 intent.setClass(activity_introduce_store.this,store2.class);
                 startActivity(intent);
 
+            }
+        });
+        Button home = (Button) findViewById(R.id.tothehome);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity_introduce_store.this, home_page.class);
+                startActivity(intent);
+                ProgressDialogUtil.dismiss();
             }
         });
 
