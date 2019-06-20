@@ -49,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     getMember(mem_account , mem_password);
                 }
+                SharedPreferences bcde = getSharedPreferences("save",activity_register.MODE_PRIVATE);
+                SharedPreferences abcd =getSharedPreferences("save",MODE_PRIVATE);
+
+                SharedPreferences.Editor editor = abcd.edit();
+                int x =bcde.getInt("restnum",1);
+                editor.putInt("restnum",15);
+                editor.commit();
             }
         });
 
@@ -86,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         mem_name = response.body().getfields(j).getMem_name();
                         SharedPreferences sharedPreferences1 = getSharedPreferences("User" , MODE_PRIVATE);
                         sharedPreferences1.edit().putString("mem_name",mem_name).apply();
+
                     }
                     j++;
                 }

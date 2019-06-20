@@ -36,7 +36,7 @@ public class activity_card extends AppCompatActivity {
     private int boo = 0;
     private String cat = "中式";
     private String cat1 = "日式";
-    private String cat2="西式";
+    private String cat2 = "西式";
 
     private List<String> pool;
     private TextView testarray;
@@ -264,9 +264,9 @@ public class activity_card extends AppCompatActivity {
                         .putString("card",pool.get(r))
                         .commit();
 
-                    SharedPreferences bcde=getSharedPreferences("save",activity_register.MODE_PRIVATE);
+                    SharedPreferences bcde = getSharedPreferences("save",activity_register.MODE_PRIVATE);
                     SharedPreferences.Editor editor = abcd.edit();
-                    int x =bcde.getInt("restnum",1);
+                    int x = bcde.getInt("restnum",1);
                     editor.putInt("restnum",x-1);
                     editor.commit();
                             //================================================================
