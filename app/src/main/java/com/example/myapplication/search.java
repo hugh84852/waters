@@ -145,15 +145,15 @@ public class search extends AppCompatActivity {
 
                 for (i = 0; i < len; i++)
                 {
-                    if (response.body().getfields(i).getCat_name().equals(SP))
+                    if (response.body().getfields(i).getCat_name2().equalsIgnoreCase(SP))
                     {
                         //boo = 1;
                         //res_name.setText(response.body().getfields(i).getRes_name());
                         //Toast.makeText(search.this,"有!",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(search.this, search_result2.class);
-                        Bundle bundle = new Bundle();
-                        bundle.putString("get",SP);
-                        intent.putExtras(bundle);
+//                        Bundle bundle = new Bundle();
+//                        bundle.putString("get",SP);
+//                        intent.putExtras(bundle);
                         startActivity(intent);
                         break;
                     }
@@ -167,7 +167,7 @@ public class search extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Category> call, Throwable t) {
-                res_name.setText(t.getMessage());
+                Toast.makeText(search.this,"fail",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -192,7 +192,7 @@ public class search extends AppCompatActivity {
                 String get = ET.getText().toString().trim();
                 getResturant(get);
                 }
-                else if(!(SP.getSelectedItem().toString().trim().equals("")))
+                else if(!(SP.getSelectedItem().toString().trim().equals("類別")))
                 {
                     String sp = SP.getSelectedItem().toString().trim();
                     getCAT(sp);

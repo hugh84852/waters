@@ -125,6 +125,9 @@ public class fields {
     public List<String> getCat_name() {
         return cat_name;
     }
+    public String getCat_name2(){
+        return cat_name.get(0);
+    }
 
     //--------------------------------------Card_Count---------------------------------------------
     private int count;
