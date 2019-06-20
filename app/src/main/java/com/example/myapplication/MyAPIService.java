@@ -1,5 +1,9 @@
 package com.example.myapplication;
 
+import com.example.myapplication.dto.CategoryDto;
+
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -7,6 +11,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.QueryMap;
 
 public interface MyAPIService<restaurant> {
     // 測試網站      https://jsonplaceholder.typicode.com/
@@ -27,7 +32,7 @@ public interface MyAPIService<restaurant> {
     Call<Card> getCard();    // 取得的回傳資料用Albums物件接收，連線名稱取為getAlbums
 
     @GET("category?api_key=key5qsDjEVRN1DjvG")    // 設置一個GET連線，路徑為albums/1
-    Call<Category> getCat();    // 取得的回傳資料用Albums物件接收，連線名稱取為getAlbums
+    Call<ListRes<CategoryDto>> getCat(@QueryMap Map<String, String> query);    // 取得的回傳資料用Albums物件接收，連線名稱取為getAlbums
 
     @GET("category?api_key=key5qsDjEVRN1DjvG")    // 設置一個GET連線，路徑為albums/1
     Call<Reqregist> getCat1();
