@@ -123,7 +123,7 @@ public class search extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Restaurant> call, Throwable t) {
-                res_name.setText(t.getMessage());
+                Toast.makeText(search.this,"fail",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -189,8 +189,8 @@ public class search extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 if(!(ET.getText().toString().trim().equals("")))
                 {
-                String get = ET.getText().toString().trim();
-                getResturant(get);
+                    String get = ET.getText().toString().trim();
+                    getResturant(get);
                 }
                 else if(!(SP.getSelectedItem().toString().trim().equals("類別")))
                 {
