@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         account = (EditText) findViewById(R.id.editText6);
         password = (EditText) findViewById(R.id.editText7);
 
-
         Button login = (Button) findViewById(R.id.button1);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,18 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     getMember(mem_account , mem_password);
                 }
-
-                SharedPreferences bcde=getSharedPreferences("save",activity_register.MODE_PRIVATE);
-                SharedPreferences abcd =getSharedPreferences("save",MODE_PRIVATE);
-
-                SharedPreferences.Editor editor = abcd.edit();
-                int x =bcde.getInt("restnum",1);
-                editor.putInt("restnum",15);
-                editor.commit();
-
-
-
-
             }
         });
 
@@ -92,13 +79,9 @@ public class MainActivity extends AppCompatActivity {
                         Successlogin = true;SharedPreferences sharedPreferences = getSharedPreferences("User" , MODE_PRIVATE);
                         sharedPreferences.edit().putString("mem_acoount",response.body().getMem_account()).apply();
                         sharedPreferences.edit().putString("mem_id",response.body().getId(j));
-                        boolean isFirstRun = sharedPreferences.getBoolean("isFirstRun", true);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                        Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至首頁
+                        Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至喜好頁面
                         startActivity(intent);
                         ProgressDialogUtil.dismiss();
-
 
                         mem_name = response.body().getfields(j).getMem_name();
                         SharedPreferences sharedPreferences1 = getSharedPreferences("User" , MODE_PRIVATE);
