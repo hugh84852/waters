@@ -26,7 +26,7 @@ public interface MyAPIService<restaurant> {
     @GET("Card?api_key=key5qsDjEVRN1DjvG")    // 設置一個GET連線，路徑為albums/1
     Call<Card> getCard();    // 取得的回傳資料用Albums物件接收，連線名稱取為getAlbums
 
-    @GET("category?api_key=key5qsDjEVRN1DjvG")    // 設置一個GET連線，路徑為albums/1
+    @GET("Category?api_key=key5qsDjEVRN1DjvG")    // 設置一個GET連線，路徑為albums/1
     Call<Category> getCat();    // 取得的回傳資料用Albums物件接收，連線名稱取為getAlbums
 
     @GET("category?api_key=key5qsDjEVRN1DjvG")    // 設置一個GET連線，路徑為albums/1
@@ -51,7 +51,7 @@ public interface MyAPIService<restaurant> {
             "Accept: application/json; charset=utf-8",
             "Content-Type: application/json; charset=utf-8"
     })
-    Call<Reqregist> changeInfor(@Body Reqregist fields);
+    Call<Reqregist> changeInfor(@Body Reqregist cardcount_fields);
 
 
     @POST("Card_count?api_key=key5qsDjEVRN1DjvG ")
