@@ -45,6 +45,10 @@ public class activity_register extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        SharedPreferences abcd =getSharedPreferences("save",MODE_PRIVATE);
+        SharedPreferences.Editor editor = abcd.edit();
+        editor.putInt("restnum",0);
+        editor.commit();
         checkbox = new ArrayList<>();
 
         getnum = 0 ;

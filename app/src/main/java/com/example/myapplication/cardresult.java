@@ -22,6 +22,7 @@ public class  cardresult extends AppCompatActivity {
         textView16 = (TextView)findViewById(R.id.textView16);
          getRes();
 
+
     }
 
 

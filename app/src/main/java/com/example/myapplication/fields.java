@@ -123,5 +123,13 @@ public class fields {
     public List<String> getCat_name() {
         return cat_name;
     }
+
+    //--------------------------------------Card_Count---------------------------------------------
+    private int count;
+
+    public fields(int c){
+        count = c;
+    }
+
 }
 

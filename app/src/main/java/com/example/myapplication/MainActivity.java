@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private MyAPIService MyAPI;
     private EditText account, password;
     private String mem_name;
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         ProgressDialogUtil.dismiss();
         account = (EditText) findViewById(R.id.editText6);
         password = (EditText) findViewById(R.id.editText7);
+
 
         Button login = (Button) findViewById(R.id.button1);
         login.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +51,18 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     getMember(mem_account , mem_password);
                 }
+
+                SharedPreferences bcde=getSharedPreferences("save",activity_register.MODE_PRIVATE);
+                SharedPreferences abcd =getSharedPreferences("save",MODE_PRIVATE);
+
+                SharedPreferences.Editor editor = abcd.edit();
+                int x =bcde.getInt("restnum",1);
+                editor.putInt("restnum",15);
+                editor.commit();
+
+
+
+
             }
         });
 
@@ -93,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else
                         {
-                            Intent intent = new Intent(MainActivity.this, Main2Activity.class);//成功後切換至首頁
+                            Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至首頁
                             startActivity(intent);
                             ProgressDialogUtil.dismiss();
                         }
@@ -115,5 +129,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void setCount(final int count){
+        MyAPI = RetrofitManager.getInstance().getAPI();
+        Call<Reqregist> call = MyAPI.changeInfor(new Reqregist(new fields(count)));
+        call.enqueue(new Callback<Reqregist>(){
+
+            @Override
+            public void onResponse(Call<Reqregist> call, Response<Reqregist> response) {
+                Toast.makeText(MainActivity.this,"ok",Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<Reqregist> call, Throwable t) {
+                Toast.makeText(MainActivity.this,"no",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
