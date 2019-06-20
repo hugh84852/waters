@@ -5,6 +5,7 @@ public class Reqregist {
     public String id ;
     private Member member;
     private fields fields;
+    private cardcount_fields cardcount_fields;
 
     public String getId(){return id;}
 
@@ -12,8 +13,10 @@ public class Reqregist {
     {
         this.fields = fields;
     }
-    public int records_length(){
-        return records.length;
+
+    public Reqregist(cardcount_fields cardcount_fields)
+    {
+        this.cardcount_fields = cardcount_fields;
     }
 
     public fields getFields() {

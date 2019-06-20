@@ -51,7 +51,6 @@ public class activity_register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         checkbox = new ArrayList<>();
 
-        getnum = 0 ;
         email = (EditText) findViewById(R.id.editText);
         password = (EditText) findViewById(R.id.editText4);
         name = (EditText) findViewById(R.id.editText3);
@@ -221,7 +220,6 @@ public class activity_register extends AppCompatActivity {
                 // TODO Auto-generated method stub
             }
         });
-
 //        //----------------------------------------------------------------------------------
 
         gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -269,18 +267,16 @@ public class activity_register extends AppCompatActivity {
                 }
                 else{
                     if(gender_tostring.equals("男")){
-                        gender_tostring = "M";
+                        gender_choose = "男";
                     }
                     else{
-                        gender_tostring = "F";
+                        gender_choose = "女";
                     }
                     getMember(mem_email,mem_password,mem_name,gender_choose,mem_phone,mem_birthday);
                 }
             }
         });
     }
-
-
 
     public void getMember(final String mem_email, final String mem_password, final String mem_name, final String gender_tostring, final String mem_phone, final String mem_birthday) {
         MyAPI = RetrofitManager.getInstance().getAPI();
@@ -300,7 +296,7 @@ public class activity_register extends AppCompatActivity {
                     j++;
                 }
                 if (ifExisted == false) {
-                    PostRegister(mem_email,mem_password,mem_name,gender_tostring,mem_phone,mem_birthday);
+                    PostRegister(mem_email,mem_password,mem_name,gender_tostring,mem_phone,mem_birthday,checkbox);
                 }
             }
 
@@ -326,7 +322,7 @@ public class activity_register extends AppCompatActivity {
     }
 ////////////////
     public void PostRegister(final String mem_email,final String mem_password , final String mem_name,
-                             final String gender_tostring , final String mem_phone, final String mem_birthday) {
+                             final String gender_tostring , final String mem_phone, final String mem_birthday, final List<String> checkbox) {
         MyAPI = RetrofitManager.getInstance().getAPI();
         Call<Reqregist> call = MyAPI.PostMember(new Reqregist(new fields(mem_email,mem_password,mem_name,gender_tostring,mem_birthday,mem_phone,checkbox)));
         call.enqueue(new Callback<Reqregist>() {
