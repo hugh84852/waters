@@ -51,7 +51,7 @@ public interface MyAPIService<restaurant> {
             "Accept: application/json; charset=utf-8",
             "Content-Type: application/json; charset=utf-8"
     })
-    Call<Reqregist> changeInfor(@Body Reqregist fields);
+    Call<Reqregist> changeInfor(@Body Reqregist cardcount_fields);
 
 
     @POST("Card_count?api_key=key5qsDjEVRN1DjvG ")

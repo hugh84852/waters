@@ -40,17 +40,17 @@ public class fields {
         return res_info;
     }
 
-    private List<String> res_cat_name;
-
-    public List<String> getRes_Cat_name() {
-        return res_cat_name;
-    }
-
-    private List<String> res_ser_name;
-
-    public List<String> getRes_Ser_name() {
-        return res_ser_name;
-    }
+//    private List<String> res_cat_name;
+//
+//    public List<String> getRes_Cat_name() {
+//        return res_cat_name;
+//    }
+//
+//    private List<String> res_ser_name;
+//
+//    public List<String> getRes_Ser_name() {
+//        return res_ser_name;
+//    }
 //
 //    //--------------------------------------Member-----------------------------------------------
     private String mem_account;
@@ -77,9 +77,9 @@ public class fields {
         this.mem_phone = mem_phone;
         this.cat_id = cat_id;
     }
-    public fields(List<String> catId){
-        cat_id = catId;
-    }
+//    public fields(List<String> catId){
+//        cat_id = catId;
+//    }
 
     public String getMem_account() {
         return mem_account;
@@ -93,17 +93,17 @@ public class fields {
         return mem_name;
     }
 
-    public String getMem_gender() {
-        return mem_gender;
-    }
-
-    public String getMem_birthday() {
-        return mem_birthday;
-    }
-
-    public String getMem_phone() {
-        return mem_phone;
-    }
+//    public String getMem_gender() {
+//        return mem_gender;
+//    }
+//
+//    public String getMem_birthday() {
+//        return mem_birthday;
+//    }
+//
+//    public String getMem_phone() {
+//        return mem_phone;
+//    }
 //
 //    //--------------------------------------Story------------------------------------------------
 //    private int[] sto_id;
@@ -140,13 +140,5 @@ public class fields {
     public String getCat_name2(){
         return cat_name.get(0);
     }
-
-    //--------------------------------------Card_Count---------------------------------------------
-    private int count;
-
-    public fields(int c){
-        count = c;
-    }
-
 }
 

@@ -105,8 +105,8 @@ public class activity_card extends AppCompatActivity {
             p1 = (Button) findViewById(R.id.p1);
             p1.setOnClickListener(new Button.OnClickListener() {
                 public void onClick(View v) {
-                    SharedPreferences bcde=getSharedPreferences("save",activity_register.MODE_PRIVATE);
-                    SharedPreferences abcd =getSharedPreferences("save",MODE_PRIVATE);
+                    SharedPreferences bcde = getSharedPreferences("save",activity_register.MODE_PRIVATE);
+                    SharedPreferences abcd = getSharedPreferences("save",MODE_PRIVATE);
                     int x =bcde.getInt("restnum",1);
                     if(x > 0) {
 
@@ -175,7 +175,7 @@ public class activity_card extends AppCompatActivity {
 
     public void setCount(final int count){
         MyAPI = RetrofitManager.getInstance().getAPI();
-        Call<Reqregist> call = MyAPI.changeInfor(new Reqregist(new fields(count)));
+        Call<Reqregist> call = MyAPI.changeInfor(new Reqregist(new cardcount_fields(count)));
         call.enqueue(new Callback<Reqregist>(){
 
             @Override
@@ -222,7 +222,7 @@ public class activity_card extends AppCompatActivity {
             @Override
             public void onResponse(Call<Card_count> call, Response<Card_count> response) {
                 int count1 = response.body().getCount();
-                count1+=1;
+                count1++;
                 setCount(count1);
                 TextView counter = (TextView) findViewById(R.id.counter);
                 String countshow = Integer.toString(count1);
