@@ -16,7 +16,6 @@ import retrofit2.Response;
 
 public class newcard extends AppCompatActivity {
     private MyAPIService MyAPI ;
-    private String cat = "中式";
     private List<String> pool;
     private Button back;
     private Button check;
@@ -79,7 +78,7 @@ public class newcard extends AppCompatActivity {
                 String b=abcd.getString("card","fail");
                 int a =abcd.getInt("restnum",0);
 
-                editor.commit();
+                editor.apply();
 
                 Restxt.setText(b);
 

@@ -60,6 +60,13 @@ public class fields {
     private String mem_birthday;
     private String mem_phone;
     private List<String> cat_id;
+    private List<String> mem_fav_cat_name;
+
+    public List<String> getMem_fav_cat_name() {
+        return mem_fav_cat_name;
+    }
+
+
 
     public List<String> getCat_id() {
         return cat_id;
@@ -131,7 +138,7 @@ public class fields {
 //    }
 //
 //    //--------------------------------------Category---------------------------------------------
-//    private int[] cat_id;
+////    private int[] cat_id;
     private List<String> cat_name;
 
     public List<String> getCat_name() {

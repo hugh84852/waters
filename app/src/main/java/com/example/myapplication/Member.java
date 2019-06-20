@@ -52,6 +52,7 @@ public class Member {
     public Member[] getRecords() {
         return records;
     }
+
     public String getId(int i){
         return records[i].id;
     }

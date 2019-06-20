@@ -137,10 +137,10 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/iB800"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar10"
-        app:layout_constraintVertical_bias="0.116"
+        app:layout_constraintVertical_bias="0.092"
         app:srcCompat="@drawable/story1" />
 
     <TextView
@@ -214,5 +214,24 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar10"
         app:layout_constraintVertical_bias="0.743"
         app:srcCompat="@drawable/story2" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="189dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="水水食記"
+        android:textColor="#FFFFFF"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iB800"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar10"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

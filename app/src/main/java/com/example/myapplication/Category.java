@@ -1,9 +1,16 @@
 package com.example.myapplication;
 
+import java.util.List;
+
 public class Category {
     private Category[] records;
     private String id;
     private fields fields;
+
+    //    private int[] cat_id;
+    private List<String> cat_name;
+
+
 
     public Category(String id){
         this.id = id;

@@ -83,17 +83,19 @@ public class MainActivity extends AppCompatActivity {
                 boolean Successlogin = false;
                 while (j < len) {
                     if (response.body().getfields(j).getMem_account().equals(account) && response.body().getfields(j).getMem_password().equals(password)) {
-                        Successlogin = true;SharedPreferences sharedPreferences = getSharedPreferences("User" , MODE_PRIVATE);
-                        sharedPreferences.edit().putString("mem_acoount",response.body().getMem_account()).apply();
-                        sharedPreferences.edit().putString("mem_id",response.body().getId(j));
-                        Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至喜好頁面
+                        Successlogin = true;
+                        String mem_account = response.body().getfields(j).getMem_account();
+                        final SharedPreferences session = getSharedPreferences("User" , MODE_PRIVATE);
+                        final SharedPreferences.Editor editor1 = session.edit();
+                        editor1.putString("mem_account",mem_account).commit();
+                        editor1.putString("mem_id",response.body().getId(j));
+                        Intent intent = new Intent(MainActivity.this, home_page.class);//成功後切換至首頁
                         startActivity(intent);
                         ProgressDialogUtil.dismiss();
 
                         mem_name = response.body().getfields(j).getMem_name();
                         SharedPreferences sharedPreferences1 = getSharedPreferences("User" , MODE_PRIVATE);
                         sharedPreferences1.edit().putString("mem_name",mem_name).apply();
-
                     }
                     j++;
                 }

@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.SearchEvent;
@@ -26,6 +27,12 @@ public class home_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        SharedPreferences session = getSharedPreferences("User",MODE_PRIVATE);
+        String x = session.getString("mem_account","1080");
+        System.out.println(x);
+
+
 
 
         S1 = (SearchView) findViewById(R.id.SearchRestaurant);
@@ -61,6 +68,7 @@ public class home_page extends AppCompatActivity {
                 /* TODO Auto-generated method stub */
                 Intent intent = new Intent();
                 intent.setClass(home_page.this,activity_introduce_store.class);
+
                 Bundle bundle = new Bundle();
                 bundle.putString("Rest","名廚鐵板燒");
                 intent.putExtras(bundle);
