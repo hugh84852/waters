@@ -1,10 +1,16 @@
 package com.example.myapplication;
 
+import java.util.List;
+
 public class Category {
     private Category[] records;
     private String id;
     private fields fields;
-    private getcategory getcategory;
+
+    //    private int[] cat_id;
+    private List<String> cat_name;
+
+
 
     public Category(String id){
         this.id = id;
@@ -18,10 +24,5 @@ public class Category {
     }
     public fields getfields(int i){
         return records[i].fields;
-    }
-
-    public getcategory getcategory(int i)
-    {
-        return records[i].getcategory;
     }
 }

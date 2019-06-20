@@ -77,9 +77,9 @@ public class fields {
         this.mem_phone = mem_phone;
         this.cat_id = cat_id;
     }
-    public fields(List<String> catId){
-        cat_id = catId;
-    }
+//    public fields(List<String> catId){
+//        cat_id = catId;
+//    }
 
     public String getMem_account() {
         return mem_account;
@@ -131,15 +131,15 @@ public class fields {
 //    }
 //
 //    //--------------------------------------Category---------------------------------------------
-//    private int[] cat_id;
+////    private int[] cat_id;
     private List<String> cat_name;
 
     public List<String> getCat_name() {
         return cat_name;
     }
-//    public String getCat_name2(){
-//        return cat_name.get(0);
-//    }
+    public String getCat_name2(){
+        return cat_name.get(0);
+    }
 
     //--------------------------------------Card_Count---------------------------------------------
     private int count;

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
@@ -41,7 +42,7 @@ public class search_result extends AppCompatActivity {
     Restaurant restaurant;
     private TextView res_name;
     private int boo = 0;
-
+    private ImageButton b1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,17 @@ public class search_result extends AppCompatActivity {
         cat_name = (TextView) findViewById(R.id.textView24);
         ser_name = (TextView) findViewById(R.id.textView25);
         res_info = (TextView) findViewById(R.id.textView26);
+
+        b1 = (ImageButton) findViewById(R.id.imageButton4);
+        b1.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent();
+                intent.setClass(search_result.this,store2.class);
+                startActivity(intent);
+
+            }
+        });
 
         Bundle bundle = this.getIntent().getExtras();
         String get = bundle.getString("get");

@@ -33,6 +33,7 @@
         <!-- android:label="@string/title_activity_shopinfo" -->
         <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
         <activity android:name=".search" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
