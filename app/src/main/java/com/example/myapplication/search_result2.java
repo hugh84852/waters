@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,12 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myapplication.dto.CategoryDto;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,67 +52,59 @@ public class search_result2 extends AppCompatActivity {
         setContentView(R.layout.activity_search_result2);
 
 
-       // mlv1 = (ListView) findViewById(R.id.lv_1);
-        mlv1.setAdapter(new ListViewAdapter(search_result2.this));
-        mlv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(search_result2.this,"pos:"+position,Toast.LENGTH_SHORT).show();
-            }
-        });
-        mlv1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent,View view,int position,long id){
-                Toast.makeText(search_result2.this,"長按"+position,Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
-
-
         Bundle bundle = this.getIntent().getExtras();
-        String get = bundle.getString("get");
+        String get2 = bundle.getString("get2");
+
+
+
+        mlv1 = (ListView) findViewById(R.id.lv_1);
+//        mlv1.setAdapter(new ListViewAdapter(search_result2.this));
+
+
+
+        getCat(get2);
     }
 
-    public void getCAT(final String SP) {
+    public void getCat(final String SP) {
         MyAPIService = RetrofitManager.getInstance().getAPI();
         // 3. 建立連線的Call，此處設置call為myAPIService中的getAlbums()連線
-        Call<Category> call = MyAPIService.getCat();
-
+        Map<String, String> query = new HashMap<>();
+        //用formula判斷餐廳名稱
+        query.put("filterByFormula", "{cat_name} = '" + SP + "'");
+        Call<ListRes<CategoryDto>> call = MyAPIService.getCat(query);
         // 4. 執行call
-        call.enqueue(new Callback<Category>() {
+        call.enqueue(new Callback<ListRes<CategoryDto>>() {
             @Override
             //如果請求連接資料庫並成功抓到值
-            public void onResponse(Call<Category> call, Response<Category> response) {
+            public void onResponse(Call<ListRes<CategoryDto>> call, Response<ListRes<CategoryDto>> response) {
 
-                int len = response.body().getRecords().length; //category資料表有幾筆資料
-                int i = 0; //第0筆資料開始抓
 
-                for (i = 0; i < len; i++)
-                {
-                    if (response.body().getfields(i).getCat_name2().equalsIgnoreCase(SP))
-                    {
+                List<Res<CategoryDto>> categoryResList = response.body().getRecords();
+                for(int i=1;i<categoryResList.size();i++) {
+                    if (categoryResList.get(i).getFields().getCat_name().equals(SP)) {
+                        mlv1.setAdapter(new ListViewAdapter(categoryResList.get(i).getFields().getCat_name(), search_result2.this, categoryResList.get(i).getFields().getCat_name().length()));
+
+
                         //boo = 1;
                         //res_name.setText(response.body().getfields(i).getRes_name());
                         //Toast.makeText(search.this,"有!",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(search_result2.this, search_result3.class);
-//                        Bundle bundle = new Bundle();
-//                        bundle.putString("get",SP);
-//                        intent.putExtras(bundle);
-                        startActivity(intent);
-                        break;
+
+//                    Bundle bundle = new Bundle();
+//                    bundle.putString("get", SP);
+//                    intent.putExtras(bundle);
+
+
+                    } else {
+                        Toast.makeText(search_result2.this, "查無此類型店家!", Toast.LENGTH_SHORT).show();
                     }
                 }
-                if(boo==0)
-                {
-                    Toast.makeText(search_result2.this, "查無此類型店家!", Toast.LENGTH_SHORT).show();
-                }
-
             }
 
-            @Override
-            public void onFailure(Call<Category> call, Throwable t) {
-                Toast.makeText(search_result2.this,"fail",Toast.LENGTH_SHORT).show();
 
+            @Override
+            public void onFailure(Call<ListRes<CategoryDto>> call, Throwable t) {
+                Toast.makeText(search_result2.this, "fail", Toast.LENGTH_SHORT).show();
+                Log.e("search", "[getCAT]" + t.getMessage());
             }
         });
     }
